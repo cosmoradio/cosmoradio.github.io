@@ -16,7 +16,6 @@ window.onload = function() {
 }
 
 window.addEventListener('resize', function(event){
-	console.log(12)
 	// do stuff here
 	//<link rel="stylesheet" type="text/css" href="./css/desktop.css">
 	loadStyle('./css/'+getDevType()+'.css', 'visor');
@@ -40,7 +39,7 @@ function loadStyle(name, toFrame = null){
 	}else{
 		let iframeName = document.getElementById(toFrame);
 		let iframeContent = iframeName.contentDocument;
-		console.log(iframeContent,iframeName)
+		console.log(iframeContent,iframeName,toFrame)
 		iframeContent.getElementsByTagName("head")[0].appendChild(element);
 	}
 
