@@ -1,0 +1,27 @@
+#songname{
+  text-align: left;
+  font-size: 50px;
+  display:block;
+}
+#artist{
+  text-align: left;
+  font-size: 25px;
+  display:block;
+}
+table {
+  width: 100%;
+  white-space: nowrap;
+}
+#title {
+  top:0;
+  color: #FFF;
+  text-align: center;
+  font-family: "lato", sans-serif;
+  font-weight: 300;
+  letter-spacing: 10px;
+}
+#title span {
+  background: -webkit-linear-gradient(#ff0076, white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
