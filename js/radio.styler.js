@@ -40,7 +40,7 @@ function loadStyle(name, toFrame = null){
 		let iframeName = document.getElementById(toFrame);
 		let iframeContent = iframeName.contentDocument;
 		console.log(iframeContent,iframeName,toFrame)
-		console.logiframeContent.getElementsByTagName("head")[0].appendChild(element));
+		console.log(iframeContent.getElementsByTagName("head")[0].appendChild(element));
 	}
 
 }
