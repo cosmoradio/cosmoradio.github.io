@@ -13,6 +13,7 @@ window.onload = function() {
 	loadStyle('./css/'+'style'+'.css');
 	loadStyle('./css/'+getDevType()+'.css', 'visor');
 	loadBackground("stars");
+	loadStyle('./css/'+getDevType()+'.css', 'visor');
 }
 
 window.addEventListener('resize', function(event){
