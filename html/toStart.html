@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <style>
+  html{
+    margin:0;
+    pdding:0;
+    width:100%;
+    height:100%;
+    background-color:transparent;
+  }
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 6em;
+    white-space:nowrap;
+  }
+  #timer{
+    display:block;
+      font-size: 32px;
+  transform: scale(.5, 1);
+  }
+  </style>
+</head>
+<body>
+<script>
+window.onload = timer();
+
+function timer(){
+  var countDownDate = new Date("Dec 25, 2021 12:00:00").getTime();
+
+  // Update the count down every 1 second
+  var x = setInterval(function() {
+
+    // Get today's date and time
+    var now = new Date().getTime();
+
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    if(seconds < 10 && seconds >= 0)seconds = '0' + seconds;
+
+    // Display the result in the element with id="demo"
+    document.getElementById("timer").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+
+    // If the count down is finished, write some text
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("timer").innerHTML = "EXPIRED";
+    }
+  }, 1000);
+}
+</script>
+<div class='container'>
+  <div id='title'>до старта / time to start</div>
+  <div id='timer'></div>
+</div>
+</body>
+</html>

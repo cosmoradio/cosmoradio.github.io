@@ -11,15 +11,12 @@ function getDevType(){
 window.onload = function() {
 	loadPage();
 	loadStyle('./css/'+'style'+'.css');
-	loadStyle('./css/'+getDevType()+'.css', 'visor');
+	loadStyle('./css/'+getDevType()+'.css');
 	loadBackground("stars");
-	loadStyle('./css/'+getDevType()+'.css', 'visor');
 }
 
 window.addEventListener('resize', function(event){
 	// do stuff here
-	//<link rel="stylesheet" type="text/css" href="./css/desktop.css">
-	loadStyle('./css/'+getDevType()+'.css', 'visor');
 });
 
 function loadPage(){
@@ -30,20 +27,14 @@ function loadPage(){
 	doc.append(frm)
 }
 
-function loadStyle(name, toFrame = null){
+function loadStyle(name, toFrame = null) {
+	//if(document.getElementById('loadedStyle'))document.getElementById('loadedStyle').remove()
 	var element = document.createElement("link");
 	element.setAttribute("rel", "stylesheet");
 	element.setAttribute("type", "text/css");
 	element.setAttribute("href", name);
-	if(!toFrame){
-		document.getElementsByTagName("head")[0].appendChild(element);
-	}else{
-		let iframeName = document.getElementById(toFrame);
-		let iframeContent = iframeName.contentDocument;
-		console.log(iframeContent,iframeName,toFrame)
-		console.log(iframeContent.getElementsByTagName("head")[0].appendChild(element));
-	}
 
+	document.getElementsByTagName("head")[0].appendChild(element);
 }
 
 function loadBackground(name){
@@ -73,4 +64,5 @@ function loadBackground(name){
 }
 
 
-//<iframe id="yt_player" width="560" height="315" src="https://www.youtube.com/embed/WTXDOn-Ph0M?controls=0&enablejsapi=1" frameborder="0" allow="accelerometer; autoplay;  encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+/*<iframe id="yt_player" width="560" height="315" src="https://www.youtube.com/embed/WTXDOn-Ph0M?controls=0&enablejsapi=1" frameborder="0" allow="accelerometer; autoplay;  encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+/**/

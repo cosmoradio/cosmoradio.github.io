@@ -58,7 +58,7 @@
 }
 
 .wrap{
-  z-index:0;
+  z-index:-2;
   position:absolute;
   display:block;
   width:100%;

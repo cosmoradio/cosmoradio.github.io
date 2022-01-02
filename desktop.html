@@ -3,7 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  
+  <meta http-equiv="Permissions-Policy" content="interest-cohort=()"/>
+  <link rel="stylesheet" type="text/css" href="./css/desktop.css" id="loadedStyle">
+    <script src='./js/cosmoPlayer.js'></script>
 </head>
 <body>
   <div id="container" style="margin:0;position:relative;z-index:1">
@@ -29,5 +31,25 @@
       </table>
     </div>
   </div>
+  <div class="box_visor" style='display:block;'>
+    <div id='window_visor' style='position:absolute;background-color:grey;width:100%;height:70%;right:0;'>
+      <div id="video_view">
+        <div class="fictiv_block" style='display:block'>
+
+        </div>
+      </div>
+      <div id="news_view"></div>
+      <div id='setting_view'></div>
+      <div id='roadmap_view'></div>
+    </div>
+  </div>
+  <div id='menu' style='position:fixed;width:100%;bottom:0px;font-size:2em;text-align:center;margin:auto;z-index:20000;'>
+    <div id='button_news' style="display:inline">📰</div>
+    <div id='button_video' style="display:inline">📺</div>
+    <div id='button_games' style="display:inline">🎮</div>
+    <div id='button_setting' style="display:inline">🪛</div>
+  </div>
 </body>
+<footer>
+</footer>
 </html>
