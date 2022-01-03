@@ -17,6 +17,7 @@
   window.addEventListener("load", function(event) {
     try {
       cosmoPlayer.addElement();
+      cosmoPlayer.setUrlClick();
       document.getElementById(cosmoPlayer.idButPlayer).onclick = function(){
         let name = document.getElementById(cosmoPlayer.idButPlayer).src
         if(!name.includes('img/1play.png') )  {
@@ -55,6 +56,11 @@
       rawFile.send(null);
   }
 
+  cosmoPlayer.setUrlClick = function(){
+    document.getElementById('title').onclick = window.open(
+      cosmoPlayer.controlPlayer("getVideoUrl")  , '_blank').focus();
+  }
+
 
   cosmoPlayer.controlPlayer = function(func, param="" ){
     let frameOb = document.getElementById(cosmoPlayer.idYTBPlayer);
@@ -75,12 +81,10 @@
     if ( func == "getVideoUrl" )funct = "getVideoUrl"
     if ( func == "getIframe" )funct = "getIframe"
     if ( func == "destroy" )funct = "destroy"
+    if ( func == "getVideoUrl" )funct = "getVideoUrl"
 
 
-
-    console.log(
-      frameOb.contentWindow.postMessage('{"event":"command","func":"' + funct + '","args":"' + param + '"}', '*')
-      );
+    return frameOb.contentWindow.postMessage('{"event":"command","func":"' + funct + '","args":"' + param + '"}', '*')
   }
 
   cosmoPlayer.parseResponse = function( resp ){
