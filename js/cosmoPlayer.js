@@ -57,9 +57,8 @@
   }
 
   cosmoPlayer.setUrlClick = function(){
-    /*document.getElementById('title').click = window.open(
-      cosmoPlayer.controlPlayer("getVideoUrl")  , '_blank').focus();*/
-    document.getElementById('title').click = 'console.log(12)'
+    document.getElementById('title').click =
+     "window.open( cosmoPlayer.controlPlayer('getVideoUrl')  , '_blank' ).focus()"
   }
 
 
