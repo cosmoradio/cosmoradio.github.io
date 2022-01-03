@@ -5,10 +5,21 @@
   <meta name="viewport" content="width=device-width">
   <meta http-equiv="Permissions-Policy" content="interest-cohort=()"/>
   <link rel="stylesheet" type="text/css" href="./css/mobile.css" id="loadedStyle">
+  <script>
+    function fullscreen(){
+      if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    }
+  </script>
 </head>
 <body>
   <div style='margin:5px'>
-    <img src="./img/logo_h.png" id='logo' ></img>
+    <img src="./img/logo_h.png" id='logo' onclick="location.reload(true);"></img>
     <span class='box' >
       <img src="./img/1pause.png" id='buttPlayer' onclick='buttPlayer()'></img>
     </span>
@@ -17,6 +28,16 @@
       <span class='title textGlow' id ="artist"></span>
     </div>
 
+  </div>
+  <div id='menu' >
+    <div id='button_news' class='buttons' >📰</div>
+    <div id='button_video' class='buttons' >📺</div>
+
+    <img src="./img/1pause.png" id='buttPlayer' class='box_emoji' style='bottom:0;padding-bottom:0px;' onclick='buttPlayer()'></img>
+
+    <div id='button_games' class='buttons' >🎮</div>
+    <div id='button_setting' class='buttons' >🪛</div>
+    <div id='button_screen' class='buttons' onclick='fullscreen()' >🎞️</div>
   </div>
 </body>
 </html>
