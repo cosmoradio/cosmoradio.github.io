@@ -27,9 +27,9 @@ body{
     width:70%;
   }
   #buttPlayer{
-    width:35%;
+    width:11%;
   }
-  img{
+  img#logo{
     display:block;
     margin-left: auto;
     margin-right: auto;
@@ -45,7 +45,32 @@ body{
     display:block;
   }
   .box{
-    position: absolute;bottom: 0; width: 100%;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display:none;
+  }
+  .box_emoji{
+    display: inline;
+    vertical-align: bottom;
+  }
+  .box_emoji:hover{
+    width: 15%;
+  }
+  .buttons{
+    display: inline;
+  }
+  .buttons:hover{
+    font-size:1.3em;
+  }
+  #menu{
+    position:fixed;
+    width:100%;
+    bottom: 5px;
+    font-size:2em;
+    text-align:center;
+    margin:auto;
+    z-index:20000;
   }
 }
 
@@ -75,9 +100,22 @@ body{
     .box{
       display: inline;
     }
+    .box_emoji{
+      display: none;
+    }
     .titlewrap{
       display:inline-block;
       vertical-align: top;
+    }
+    #menu{
+      position:fixed;
+      width:100%;
+      bottom:0px;
+      font-size:2em;
+      text-align:center;
+      margin:auto;
+      z-index:20000;
+      display:inline;
     }
 
 }
