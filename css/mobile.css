@@ -117,5 +117,8 @@ body{
       z-index:20000;
       display:inline;
     }
+    .buttons{
+      display: inline;
+    }
 
 }

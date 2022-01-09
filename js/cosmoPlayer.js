@@ -18,6 +18,7 @@
     try {
       cosmoPlayer.addElement();
       cosmoPlayer.setUrlClick();
+
       document.getElementById(cosmoPlayer.idButPlayer).onclick = function(){
         let name = document.getElementById(cosmoPlayer.idButPlayer).src
         if(!name.includes('img/1play.png') )  {
@@ -31,6 +32,34 @@
     }
     catch (e) {   }
   });
+
+  document.addEventListener('DOMContentLoaded', function(){
+    //if(document.getElementById(cosmoPlayer.idButPlayer).onclick)alert(123)
+    //thath is schachluy. i set here it becose window.onload not work in mobile verthion/ please love schachluy
+    if(!document.getElementById(cosmoPlayer.idButPlayer).onclick){
+      document.getElementById(cosmoPlayer.idButPlayer).onclick = function(){
+        let name = document.getElementById(cosmoPlayer.idButPlayer).src
+        if(!name.includes('img/1play.png') )  {
+          document.getElementById('buttPlayer').src = 'img/1play.png'
+          cosmoPlayer.controlPlayer("play");
+        }else{
+          document.getElementById('buttPlayer').src = 'img/1pause.png'  ;
+          cosmoPlayer.controlPlayer("pause");
+        }
+      };
+    }
+  })
+
+  cosmoPlayer.buttClick = function(){
+    let name = document.getElementById(cosmoPlayer.idButPlayer).src
+    if(!name.includes('img/1play.png') )  {
+      document.getElementById('buttPlayer').src = 'img/1play.png'
+      cosmoPlayer.controlPlayer("play");
+    }else{
+      document.getElementById('buttPlayer').src = 'img/1pause.png'  ;
+      cosmoPlayer.controlPlayer("pause");
+    }
+  }
 
   cosmoPlayer.addElement = function(){
     let bodyr = document.getElementsByTagName('body')[0]
