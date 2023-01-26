@@ -302,8 +302,8 @@
     clientY = e.clientY + document.body.scrollTop;
     mouseActive = true;
 
-    you.style.left = clientX + 'px';
-    you.style.top = clientY + 'px';
+    you.style.left = (clientX-26) + 'px';
+    you.style.top = (clientY-26) + 'px';
 
     // stop adding score when a user is not moving mouse
     if(mouseActiveTimer) {
@@ -528,10 +528,10 @@
       link.style.height = '40px';
     }
     if(item.IACTN == "slow") {
-      startSizeItem = 1.2
+      startSizeItem = 2
       difficulty = (difficulty>100)? difficulty+50 : 100;
-      link.style.width = '40px';
-      link.style.height = '40px';
+      link.style.width = '20px';
+      link.style.height = '20px';
     }
     if(item.IACTN == "freeze")freeze = 5000
     spriteAction("spawn", item.POSX, item.POSY, item.SCORE, item.IACTN)
