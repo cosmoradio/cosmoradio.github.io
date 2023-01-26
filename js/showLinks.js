@@ -12,7 +12,7 @@ var showLinks = ( function(){
   showLinks.idInterval = '';
 
   showLinks.readTextFile = function (file, callback) {
-    var rawFile = new XMLHttpRequest();
+    let rawFile = new XMLHttpRequest();
     rawFile.overrideMimeType("application/json");
     rawFile.open("GET", file, true);
     rawFile.onreadystatechange = function() {
@@ -30,6 +30,7 @@ var showLinks = ( function(){
       let body = document.getElementsByTagName('body')[0]
       let count = data.length
       for(i = 0; i<=count; i++){
+        console.log(data[i])
         pan = document.createElement('div')
         pan.setAttribute('id',showLinks.nameId);
       }
@@ -47,7 +48,6 @@ var showLinks = ( function(){
   showLinks.Hide = function(){
 
   }
-
 
   return showLinks
 }).call(this);
