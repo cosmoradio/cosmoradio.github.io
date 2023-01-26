@@ -94,6 +94,13 @@
         right: 10px;
         font-size: 30px;
       }
+      #positrone {
+        display: block;
+        position:absolute;
+        top: 50px;
+        right: 10px;
+        font-size: 30px;
+      }
       #restart {
         padding: 10px;
         border: 0;
@@ -134,12 +141,13 @@
       @viewport {
         user-zoom: fixed;
       }
-      
+
 
       </style>
   </head>
   <body class="state-playing">
     <div id="score"></div>
+    <div id="positrone"></div>
     <div id="you"></div>
     <div id="link"></div>
     <div id="gamepan">
@@ -218,12 +226,14 @@
     text : null,
     posx : null,
     posy : null,
-    alive :null
+    alive :null,
+    width : null,
+    height: null
   };
 
   var sprites = [];
 
-  var items = {/*
+  var items = {
     "👻" : {"timer" : 2000, "action" : "speedup", "score": "-20%"},
     "💖" : {"timer" : 3000, "action" : "speedup", "score": "-3%"},
     "🤟" : {"timer" : 700,  "action" : "speedup", "score": "-20%"},
@@ -281,10 +291,7 @@
     "📖" : {"timer" : 1000, "action" : "scalingdown"},
     "MARX" : {"timer" : 500, "action" : "win", "score": "+12%"},
     "PROFUNION" : {"timer" : 500, "action" : "win", "score": "+17%"},
-    "НАУКА ЛОГИКИ" : {"timer" : 500, "action" : "win", "score": "+23%"},/**/
-    "💣" : {"timer" : 1000, "action" : "slow"},
-    "❄️" : {"timer" : 1000, "action" : "freeze"},
-    "📖" : {"timer" : 1000, "action" : "scalingdown"},
+    "НАУКА ЛОГИКИ" : {"timer" : 500, "action" : "win", "score": "+23%"},
   }
 
   link.addEventListener('mouseover', function (e) {
@@ -337,7 +344,7 @@
   function setGameState (state) {
     gameState = state;
     document.body.className = '';
-    console.log(states.WINNER +" winner ")
+    //console.log(states.WINNER +" winner ")
     if(state == 'state-game-end'){
       if(states.WINNER == false){
         //gamepan.innerHTML = pan_loss
@@ -377,7 +384,7 @@
     spawnItem();
 
     gameLoop = setInterval(function () {
-      if( freeze == 0 ){
+      if( freeze == 0 ){ // if not freazing
         currX += (clientX - currX) / (2 * difficulty);
         currY += (clientY - currY) / (2 * difficulty);
 
@@ -390,7 +397,6 @@
           difficulty = 1.5;
         }
       }else{
-        console.log(freeze)
         freeze = ((freeze)-10)
       }
 
@@ -398,24 +404,30 @@
         endGame();
         setGameState(states.GAME_END);
       }
+      document.getElementById('positrone').textContent = 'x:'+clientX+'y:'+clientY;
+
+      //if(clientY >  item.POSY && clientY < (item.POSY+item.HEIGHT)){
+      //if(clientX > item.POSX && clientX < (item.POSX+item.WIDTH)){
+
+      // player pickup
+      if(clientY >  item.POSY && clientY < (item.POSY+item.HEIGHT) && clientX > item.POSX && clientX < (item.POSX+item.WIDTH)){
+        delItem();
+        eventPickupItem();
+        spawnItem();
+      }
 
       if(item.ILIVE == 0){
         delItem();
         spawnItem();
       }else{
         item.ILIVE -= 10;
-        //console.log(item.ILIVE,item.ILIVE -= 10)
       }
-
-
-
       if(mouseActive) {
         score++;
       }
       scoreText = 'Score:' + score;
       scoreEl.textContent = scoreText;
       document.title = scoreText;
-      //console.log("dif"+difficulty)
 
       if (currX > window.innerWidth) {
         currX = window.innerWidth;
@@ -469,10 +481,12 @@
 
     item.POSX = x
     item.POSY = y
+
     item.ITXT = Object.keys(items)[crnt]
     item.ILIVE = items[Object.keys(items)[crnt]]["timer"]
     item.IACTN = items[Object.keys(items)[crnt]]["action"]
     item.SCORE = items[Object.keys(items)[crnt]]["score"]
+
 
     let i = document.createElement("div");
     i.id = "item"
@@ -482,18 +496,9 @@
     i.style.zISndex = 3;
     i.style.fontSize = startSizeItem+'em';
     i.innerHTML = item.ITXT;
-    i.onclick==function(){
-      delItem();
-      eventPickupItem();
-      spawnItem();
-    };
-    i.onmouseover=function(){
-      delItem();
-      eventPickupItem();
-      spawnItem();
-    };
-
     document.body.appendChild(i);
+    item.WIDTH = i.offsetWidth
+    item.HEIGHT = i.offsetHeight
   }
 
   function eventPickupItem(){
@@ -502,13 +507,11 @@
     let temp = 0;
     if(item.SCORE){
       temp = Number(item.SCORE.replace(/[^\d]/g, ''))
-      //console.log("pick"+item.SCORE+' where ')
+
       if(item.SCORE[item.SCORE.length-1] == '%'){
         temp = Math.floor((score / 100) * temp)
-        //console.log("%")
       }
-      //console.log(typeof(score),typeof(temp));
-      console.log(score+' '+ item.SCORE[0]+ " "+ temp)
+
       if(item.SCORE[0] == '-')score = score - temp
       if(item.SCORE[0] == '+')score = score + temp
       if(item.SCORE[0] == '*')score = score * temp
@@ -541,7 +544,7 @@
   }
 
   function spriteAction(ac, px=null, py=null, txt=null, ation=null){
-    if(ac == "spawn"){
+    //if(ac == "spawn"){
       let i = document.createElement('div');
       i.classList.add("sprText");
       i.classList.add("sprites");
@@ -553,7 +556,8 @@
       i.style.fontSize = (startSizeItem-1.2)+'em';
       i.innerHTML = (!txt)? ation:txt;
       document.body.appendChild(i);
-    }
+      //console.log(sprite.width)
+    //}
   }
 
   function updSprite(){
@@ -562,7 +566,6 @@
     let s = document.getElementsByClassName("sprites")
     Array.from(s).forEach(function(item, i, s) {
       if(gameState == states.GAME_END){
-        console.log(s[i]+' remove')
         s[i].remove()
       }else{
         n = parseInt(s[i].style.top)
