@@ -44,6 +44,10 @@ var showLinks = ( function(){
 
   }
 
+  showLinks.Hide = function(){
+
+  }
+
 
   return showLinks
 }).call(this);
