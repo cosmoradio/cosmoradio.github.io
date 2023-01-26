@@ -380,6 +380,12 @@
       if( freeze == 0 ){
         currX += (clientX - currX) / (2 * difficulty);
         currY += (clientY - currY) / (2 * difficulty);
+
+        if (difficulty > difficultyLimit) {
+          difficulty -= 0.05;
+        } else {
+          difficulty = 1.5;
+        }
       }
 
 
@@ -410,11 +416,6 @@
       scoreEl.textContent = scoreText;
       document.title = scoreText;
       //console.log("dif"+difficulty)
-      if (difficulty > difficultyLimit) {
-        difficulty -= 0.05;
-      } else {
-        difficulty = 1.5;
-      }
 
       if (currX > window.innerWidth) {
         currX = window.innerWidth;
