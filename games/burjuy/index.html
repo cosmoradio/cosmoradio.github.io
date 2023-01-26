@@ -333,6 +333,7 @@
   });
 
   document.addEventListener('touchend', function (e) {
+    return
     if(gameState !== states.PLAYING) {
       return;
     }
