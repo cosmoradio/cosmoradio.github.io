@@ -31,7 +31,7 @@ var showLinks = ( function(){
       let count = data.length
       for(i = 0; i<=count; i++){
         //
-        pan = document.createElement(div)
+        pan = document.createElement('div')
         pan.setAttribute('id',showLinks.nameId);
       }
     });
