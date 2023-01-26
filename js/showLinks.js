@@ -1,6 +1,6 @@
 var showLinks = ( function(){
   function showLinks(){
-
+    alert()
     if (showLinks.instance_) {
     return showLinks.instance_;
     }
