@@ -25,18 +25,16 @@ var showLinks = ( function(){
 
   showLinks.load_json = function(){
     showLinks.readTextFile(showLinks.fileName, function(text){
-      var data = JSON.parse(text);
+      let data = JSON.parse(text);
+      let pan;
       let body = document.getElementByTagName('body')[0]
-
       let count = data.length
       for(i = 0; i<=count; i++){
-        
+        //
       }
-      let pan = document.createElement(div)
+      pan = document.createElement(div)
       pan.setAttribute('id',showLinks.nameId);
-
-      let pan = document.createElement(div)
-
+      //let pan = document.createElement(div)
     });
   }
 
