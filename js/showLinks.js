@@ -30,7 +30,6 @@ var showLinks = ( function(){
       let body = document.getElementsByTagName('body')[0]
       let count = data.length
       for(i = 0; i<=count; i++){
-        //
         pan = document.createElement('div')
         pan.setAttribute('id',showLinks.nameId);
       }
