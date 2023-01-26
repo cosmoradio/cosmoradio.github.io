@@ -377,10 +377,13 @@
     spawnItem();
 
     gameLoop = setInterval(function () {
-      currX += (clientX - currX) / (2 * difficulty);
-      currY += (clientY - currY) / (2 * difficulty);
+      if( freeze == 0 ){
+        currX += (clientX - currX) / (2 * difficulty);
+        currY += (clientY - currY) / (2 * difficulty);
+      }
 
-      if(clientX && Math.abs(currX - clientX) < 30 && Math.abs(currY - clientY) < 15 && freeze == 0) {
+
+      if(clientX && Math.abs(currX - clientX) < 30 && Math.abs(currY - clientY) < 15 ) {
         endGame();
         setGameState(states.GAME_END);
       }
