@@ -482,6 +482,11 @@
     i.style.zISndex = 3;
     i.style.fontSize = startSizeItem+'em';
     i.innerHTML = item.ITXT;
+    i.onclick==function(){
+      delItem();
+      eventPickupItem();
+      spawnItem();
+    };
     i.onmouseover=function(){
       delItem();
       eventPickupItem();
