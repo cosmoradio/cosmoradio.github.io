@@ -26,14 +26,21 @@ var showLinks = ( function(){
   showLinks.load_json = function(){
     showLinks.readTextFile(showLinks.fileName, function(text){
       let data = JSON.parse(text);
-      let pan;
+      let pan, name, image, link, preview, hash ;
       let body = document.getElementsByTagName('body')[0]
       let count = data.length
       for(i = 0; i<=count; i++){
         console.log(data[i])
-        pan = document.createElement('div')
+        pan = document.createElement('div');
         pan.setAttribute('id',showLinks.nameId);
-        
+        name = document.createElement('div')
+        image = document.createElement('div')
+        link = document.createElement('div')
+        hash = document.createElement('div')
+        pan.append(name)
+        pan.append(image)
+        pan.append(link)
+        pan.append(hash)
         document.getElementById("news_view").append(pan)
       }
     });
