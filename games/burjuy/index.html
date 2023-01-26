@@ -333,7 +333,7 @@
   });
 
   document.addEventListener('touchend', function (e) {
-    return
+
     if(gameState !== states.PLAYING) {
       return;
     }
@@ -496,7 +496,7 @@
     i.style.left = item.POSX+"px";
     i.style.zISndex = 3;
     i.style.fontSize = startSizeItem+'em';
-    i.innerHTML = item.ITXT;
+    i.innerHTML = item.ITXT+"&#xFE0E;";
     document.body.appendChild(i);
     item.WIDTH = i.offsetWidth
     item.HEIGHT = i.offsetHeight
