@@ -381,13 +381,18 @@
         currX += (clientX - currX) / (2 * difficulty);
         currY += (clientY - currY) / (2 * difficulty);
 
+        link.style.left = currX - linkOffsetX + 'px';
+        link.style.top = currY - linkOffsetY + 'px';
+
         if (difficulty > difficultyLimit) {
           difficulty -= 0.05;
         } else {
           difficulty = 1.5;
         }
+      }else{
+        console.log(freeze)
+        freeze = ((freeze)-10)
       }
-
 
       if(clientX && Math.abs(currX - clientX) < 30 && Math.abs(currY - clientY) < 15 ) {
         endGame();
@@ -401,13 +406,8 @@
         item.ILIVE -= 10;
         //console.log(item.ILIVE,item.ILIVE -= 10)
       }
-      if(freeze==0){
-        link.style.left = currX - linkOffsetX + 'px';
-        link.style.top = currY - linkOffsetY + 'px';
-      }else{
-        console.log(freeze)
-        freeze = ((freeze*10)-10)/10
-      }
+
+
 
       if(mouseActive) {
         score++;
