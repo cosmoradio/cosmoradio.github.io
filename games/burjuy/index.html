@@ -9,6 +9,7 @@
     <meta property="og:url" content="https://radiocosmopolit.github.io/" />
     <meta property="og:image"  content="https://radiocosmopolit.github.io/games/runaway/img/game.png">
     <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, user-scalable=no, maximum-scale=1, minimum-scale=1" />
+    <meta name=”viewport” content=”user-scalable=no” />
 
       <style>
       html{
@@ -129,6 +130,10 @@
         background-repeat: no-repeat;
       }
 
+      @viewport {
+        user-zoom: fixed;
+      }
+      
 
       </style>
   </head>
@@ -160,6 +165,9 @@
   var clientY = 0;
   var score = 0;
   var difficulty = 100;
+  var freeze = 0;
+  var prescaller = 0;
+  var timePrescaller = 0;
   var txtlabel_1 = document.getElementById('txtlabel_1')
   var txtlabel_2 = document.getElementById('txtlabel_2')
   var txtlabel_3 = document.getElementById('txtlabel_3')
@@ -214,7 +222,7 @@
 
   var sprites = [];
 
-  var items = {
+  var items = {/*
     "👻" : {"timer" : 2000, "action" : "speedup", "score": "-20%"},
     "💖" : {"timer" : 3000, "action" : "speedup", "score": "-3%"},
     "🤟" : {"timer" : 700,  "action" : "speedup", "score": "-20%"},
@@ -268,10 +276,14 @@
     "🔎" : {"timer" : 1000, "action" : "scalingup"},
     "🔬" : {"timer" : 1000, "action" : "scalingdown"},
     "💣" : {"timer" : 1000, "action" : "slow"},
+    "❄️" : {"timer" : 1000, "action" : "freeze"},
     "📖" : {"timer" : 1000, "action" : "scalingdown"},
     "MARX" : {"timer" : 500, "action" : "win", "score": "+12%"},
     "PROFUNION" : {"timer" : 500, "action" : "win", "score": "+17%"},
-    "НАУКА ЛОГИКИ" : {"timer" : 500, "action" : "win", "score": "+23%"},
+    "НАУКА ЛОГИКИ" : {"timer" : 500, "action" : "win", "score": "+23%"},/**/
+    "💣" : {"timer" : 1000, "action" : "slow"},
+    "❄️" : {"timer" : 1000, "action" : "freeze"},
+    "📖" : {"timer" : 1000, "action" : "scalingdown"},
   }
 
   link.addEventListener('mouseover', function (e) {
@@ -352,6 +364,8 @@
     score = 0;
     startSizeItem = 2.0;
     difficulty = 100;
+    freeze = 0;
+    states.WINNER == false;
 
     link.style.width = '40px'
     link.style.height = '40px'
@@ -377,9 +391,14 @@
         item.ILIVE -= 10;
         //console.log(item.ILIVE,item.ILIVE -= 10)
       }
+      if(freeze==0){
+        link.style.left = currX - linkOffsetX + 'px';
+        link.style.top = currY - linkOffsetY + 'px';
+      }else{
+        console.log(freeze)
+        freeze = ((freeze*10)-10)/10
+      }
 
-      link.style.left = currX - linkOffsetX + 'px';
-      link.style.top = currY - linkOffsetY + 'px';
       if(mouseActive) {
         score++;
       }
@@ -490,13 +509,18 @@
     }
     if(item.IACTN == "speedup")difficulty -= Math.floor(Math.random() * 30)
     if(item.IACTN == "speeddown")difficulty +=  Math.random() * (100 - 25) + 25;
-    if(item.IACTN == "scalingdown") startSizeItem = 1.2
+    if(item.IACTN == "scalingdown"){
+      startSizeItem -= 1.2
+      link.style.width = '40px';
+      link.style.height = '40px';
+    }
     if(item.IACTN == "slow") {
       startSizeItem = 1.2
       difficulty = (difficulty>100)? difficulty+50 : 100;
       link.style.width = '40px';
       link.style.height = '40px';
     }
+    if(item.IACTN == "freeze")freeze = 5000
     spriteAction("spawn", item.POSX, item.POSY, item.SCORE, item.IACTN)
     link.style.width = (parseInt(link.style.width)+10)+"px"
     link.style.height = (parseInt(link.style.height)+10)+"px"
