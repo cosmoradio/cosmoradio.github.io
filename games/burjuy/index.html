@@ -332,16 +332,6 @@
     }, 1000);
   });
 
-  document.addEventListener('touchend', function (e) {
-
-    if(gameState !== states.PLAYING) {
-      return;
-    }
-    endGame();
-    states.WINNER = false;
-    setGameState(states.FINGER_REMOVED);
-  });
-
   function setGameState (state) {
     gameState = state;
     document.body.className = '';
@@ -495,8 +485,8 @@
     i.style.top = item.POSY+"px";
     i.style.left = item.POSX+"px";
     i.style.zISndex = 3;
-    i.style.fontSize = startSizeItem+'em';
-    i.innerHTML = item.ITXT+"&#xFE0E;";
+    i.style.fontSize = (item.ITXT)startSizeItem+'em';
+    i.innerHTML = item.ITXT;
     document.body.appendChild(i);
     item.WIDTH = i.offsetWidth
     item.HEIGHT = i.offsetHeight
