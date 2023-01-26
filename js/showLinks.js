@@ -33,6 +33,8 @@ var showLinks = ( function(){
         console.log(data[i])
         pan = document.createElement('div')
         pan.setAttribute('id',showLinks.nameId);
+        
+        document.getElementById("news_view").append(pan)
       }
     });
   }
