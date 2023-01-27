@@ -1,6 +1,5 @@
 var showLinks = ( function(){
   function showLinks(){
-    alert("12")
     if (showLinks.instance_) {
     return showLinks.instance_;
     }
@@ -10,6 +9,9 @@ var showLinks = ( function(){
   showLinks.fileName = '../json/links.json';
   showLinks.nameId = 'links';
   showLinks.idInterval = '';
+  showLinks.checkStr = '';                        //func 4 saving las 50 symbols and check it with new input message
+  //showLinks.Status = true;
+
 
   showLinks.readTextFile = function (file, callback) {
     let rawFile = new XMLHttpRequest();
@@ -18,6 +20,9 @@ var showLinks = ( function(){
     rawFile.onreadystatechange = function() {
         if (rawFile.readyState === 4 && rawFile.status == "200") {
             callback(rawFile.responseText);
+        }else{
+          console.error("showLinks=>"+"cant load data from server!")
+          //showLinks.Status = false
         }
     }
     rawFile.send(null);
@@ -57,6 +62,10 @@ var showLinks = ( function(){
   showLinks.Hide = function(){
 
   }
+
+  window.addEventListener("load", (event) => {
+    showLinks.start()
+  });
 
   return showLinks
 }).call(this);
