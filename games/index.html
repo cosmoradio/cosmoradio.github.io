@@ -11,24 +11,38 @@
         var status = null;              // status of this
         var current = null;             // current game
 
-        window.addEventListener("click", loadGameList());
+        document.getElementById(idbutton).addEventListener("click", loadGameList());
 
         function loadGameList(){
             // load and show game list
             checkListGame();
-            gameList.forEach(
-                element => console.log(element)
-                );
+            
+            let menupan = document.getElementById(idMenuPan)
+
+            gameList.forEach(function(item, i, arr) {
+                //console.log( i + ": " + item + " (массив:" + arr + ")" );
+                let f = document.createElement('div')
+                f.textContent = (i+1) + ": " + item
+                f.onclick(startGame(item))
+                menupan.append(f)
+            });
+            document.body.append(menupan)
         }
 
         function startGame(gameId){
             // start gameId game
+            current = gameid;
         }
 
-        function checkListGame(){
-            var element =  document.getElementById('elementId');
-            if (typeof(element) != 'undefined' && element != null)return true;
+        function chckExstListPan(){
+            let e =  document.getElementById('elementId');
+            if (typeof(e) != 'undefined' && element != null)return true;
             return false
+        }
+
+        function closeGamePan(){
+            document.getElementById(idFrame4game).remove()
+            current = null;
         }
     </script>
   </head>
