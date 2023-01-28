@@ -1,1 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+        var gameList = ['burjuy'];
+        var idbutton = 'gamebutton';
+        var idFrame4game = "gamingFrame"
+        var idMenuPan = "idMenuPanel"
+        var status = null;              // status of this
+        var current = null;             // current game
 
+        window.addEventListener("click", loadGameList());
+
+        function loadGameList(){
+            // load and show game list
+            checkListGame();
+            gameList.forEach(
+                element => console.log(element)
+                );
+        }
+
+        function startGame(gameId){
+            // start gameId game
+        }
+
+        function checkListGame(){
+            var element =  document.getElementById('elementId');
+            if (typeof(element) != 'undefined' && element != null)return true;
+            return false
+        }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
