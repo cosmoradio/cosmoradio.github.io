@@ -12,16 +12,24 @@
 <body>
   <div style='margin:5px'>
     <img src="./img/logo_h.png" id='logo' onclick="location.reload(true);"></img>
-    <span class='box' >
-
-    </span>
+    <span class='box' ></span>
     <div class='titlewrap'>
       <span class='title textGlow' id ="songname">Press play</span>
       <span class='title textGlow' id ="artist">123</span>
     </div>
   </div>
+  <div id='window_visor' style='position:absolute;width:100%;height:70%;background-color: aquamarine;'>
+    <div id="video_view"></div>
+    <div id="news_view"></div>
+    <div id="video_view"></div>
+    <div id='game_view'></div>
+    <div id='setting_view'></div>
+    <div id='roadmap_view'></div>
+    <div id='library_view'></div>
+  </div>
+</div>
   <div id='menu' >
-    <div id='button_news' class='buttons' >📰</div>
+    <div id='button_news' onclick="krokus.triger('news_view')" class='buttons' >📰</div>
     <div id='button_video' class='buttons' >📺</div>
     <div id='button_games' class='buttons' >🎮</div>
     <img src="./img/1pause.png" id='buttPlayer' class='box_emoji' style='bottom:0;padding-bottom:0px;' ></img>
