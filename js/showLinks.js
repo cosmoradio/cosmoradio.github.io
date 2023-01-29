@@ -52,7 +52,7 @@ var showLinks = ( function(){
   }
 
   showLinks.start = function(){
-    this.idInterval = setInterval(showLinks.load_json, 1000)
+    this.idInterval = setInterval(showLinks.load_json, 1000 * 60 * 10)
   }
 
   showLinks.displayed = function(param){
