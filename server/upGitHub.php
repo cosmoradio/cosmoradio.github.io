@@ -75,7 +75,7 @@ class upGithub{
   }
 }
 
-$x = new upGithub('NathanCHEFF','token');
+$x = new upGithub('','token');
 $x->setRepos('uploader-to-github-on-php');
 var_dump( $x->getSHA('test1')); // return sha
 var_dump( $x->uploadFile('test1','testtext1')); //upload new file 'test' with contents 'testtext'
