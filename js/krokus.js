@@ -80,7 +80,7 @@
         krokus.hidePanel(el);
         if(id == krokus.currentPan ) {
           krokus.currentPan = null;
-          
+          krokus.resetGlow()
           return;
         }
       }
