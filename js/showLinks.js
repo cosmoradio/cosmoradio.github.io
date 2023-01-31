@@ -69,7 +69,7 @@ var showLinks = ( function(){
     showLinks.start()
   });
 
-  document.getElementById('button_news')
+  //document.getElementById('button_news')
 
 
   return showLinks
