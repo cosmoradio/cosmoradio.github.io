@@ -47,7 +47,7 @@ var showLinks = ( function(){
         pan.append(image)
         pan.append(link)
         pan.append(hash)
-        showLinks.direction(showLinks.directionL)
+        //showLinks.direction(showLinks.directionL)
         document.getElementById("news_view").append(pan)
       }
     });
