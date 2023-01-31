@@ -80,6 +80,7 @@
         krokus.hidePanel(el);
         if(id == krokus.currentPan ) {
           krokus.currentPan = null;
+          
           return;
         }
       }
@@ -94,11 +95,11 @@
   
     }
   
-    krokus.resetGlow = function(id){
+    krokus.resetGlow = function(id = ''){
       if(krokus.currentGlw != null){
         document.getElementsByClassName('krokusGlow')[0].classList.remove('krokusGlow')
       }
-      document.getElementById(id).classList.add('krokusGlow')
+      if(id)document.getElementById(id).classList.add('krokusGlow')
       krokus.currentGlw = id
     }
   
@@ -140,15 +141,5 @@
   
     return krokus;
   })();
-  /*
-  при первом нажатии сгенерировать див ?
-  стилизируем!
-  при дальнейших нажатиях скрываем текущий див,
-     и стилизируем или показываем другой див
-  
-  по нажатию кнопки смотрим наличие класса krokus ?:
-    1 - прячем и показываем другой див
-    0 - стилизируем и показываем.
-  
-  */
+
   
