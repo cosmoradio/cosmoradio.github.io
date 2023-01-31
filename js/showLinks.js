@@ -11,7 +11,8 @@ var showLinks = ( function(){
   showLinks.idInterval = '';
   showLinks.checkStr = '';                        //func 4 saving las 50 symbols and check it with new input message
   //showLinks.Status = true;
-
+  showLinks.direction = ['append', 'prepend'];
+  showLinks.directionL = 0
 
   showLinks.readTextFile = function (file, callback) {
     let rawFile = new XMLHttpRequest();
@@ -46,6 +47,7 @@ var showLinks = ( function(){
         pan.append(image)
         pan.append(link)
         pan.append(hash)
+        showLinks.direction(showLinks.directionL)
         document.getElementById("news_view").append(pan)
       }
     });
