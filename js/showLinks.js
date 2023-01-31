@@ -68,6 +68,10 @@ var showLinks = ( function(){
   window.addEventListener("load", (event) => {
     showLinks.start()
   });
-  
+
+  document.getElementById('news_view').addEventListener('click', ()=>{
+    showLinks.load_json()
+  });
+
   return showLinks
 }).call(this);
