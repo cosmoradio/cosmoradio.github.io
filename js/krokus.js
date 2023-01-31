@@ -76,6 +76,7 @@
   
     krokus.triger = function(id,w = 93){
       let el = document.getElementById(krokus.currentPan)
+
       if(id == krokus.currentPan || el!=null && el.classList.contains("krokusPan") ){
         krokus.hidePanel(el);
         if(id == krokus.currentPan ) {
@@ -98,8 +99,10 @@
     krokus.resetGlow = function(id = null){
       if(krokus.currentGlw != null && id){
         document.getElementsByClassName('krokusGlow')[0].classList.remove('krokusGlow')
+        console.log(12)
       }
       if(id)document.getElementById(id).classList.add('krokusGlow')
+      console.log(34)
       krokus.currentGlw = id;
     }
   
