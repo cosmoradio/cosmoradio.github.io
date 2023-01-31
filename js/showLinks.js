@@ -69,9 +69,8 @@ var showLinks = ( function(){
     showLinks.start()
   });
 
-  document.getElementById('news_view').addEventListener('click', ()=>{
-    showLinks.load_json()
-  });
+  document.getElementById('button_news')
+
 
   return showLinks
 }).call(this);
