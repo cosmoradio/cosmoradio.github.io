@@ -99,10 +99,8 @@
     krokus.resetGlow = function(id = null){
       if(krokus.currentGlw != null){
         document.getElementsByClassName('krokusGlow')[0].classList.remove('krokusGlow')
-        console.log(12)
       }
       if(id)document.getElementById(id).classList.add('krokusGlow')
-      console.log(34)
       krokus.currentGlw = id;
     }
   
