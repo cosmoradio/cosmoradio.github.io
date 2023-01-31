@@ -81,6 +81,10 @@ body{
 
 @media screen and (orientation:landscape) {
     /* landscape styles */
+    .krokusPan{
+      margin: 0px;
+      width:99%;
+    }
     #logo{
       width:30%;
     }
