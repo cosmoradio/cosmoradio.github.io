@@ -95,12 +95,12 @@
   
     }
   
-    krokus.resetGlow = function(id = ''){
-      if(krokus.currentGlw != null){
+    krokus.resetGlow = function(id = null){
+      if(krokus.currentGlw != null && id){
         document.getElementsByClassName('krokusGlow')[0].classList.remove('krokusGlow')
       }
       if(id)document.getElementById(id).classList.add('krokusGlow')
-      krokus.currentGlw = id
+      krokus.currentGlw = id;
     }
   
     krokus.createPanel = function(id,w = 93){
