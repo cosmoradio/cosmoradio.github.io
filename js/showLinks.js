@@ -42,11 +42,12 @@ var showLinks = ( function(){
         //console.log(data[i])
         pan = document.createElement('div');
         //pan.setAttribute('id',showLinks.nameId);
+        pan.onclick = window.open('data[i].link');
         pan.classList.add("showlinks")
         //pan.href = data[i].link;
         name = document.createElement('a')
         name.textContent = data[i].name
-        name.href = data[i].link
+        //name.href = data[i].link
         name.classList.add("name_lab", "alltext")
         pan.append(name)
         //console.log(data[i].name, data[i])
