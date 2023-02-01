@@ -73,4 +73,4 @@ var showLinks = ( function(){
 
 
   return showLinks
-}).call(this);
+}).();
