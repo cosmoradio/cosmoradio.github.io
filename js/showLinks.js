@@ -37,7 +37,7 @@ var showLinks = ( function(){
       let pan, name, image, link, preview, hash ;
       //let body = document.getElementsByTagName('body')[0];
       console.log(document.getElementById("news_view"))
-      //document.getElementById("news_view").innerHTML = ''
+      document.getElementById("news_view").innerHTML = ''
       let count = data.length;
       for(i = 0; i<count; i++){
         //console.log(data[i])
@@ -81,7 +81,7 @@ var showLinks = ( function(){
   showLinks.start = function(){
     console.log('load')
     showLinks.load_json()
-    this.idInterval = setInterval(showLinks.load_json, 1000 * 6 * 10)
+    this.idInterval = setInterval(showLinks.load_json, 1000 * 1 * 10)
   }
 
   window.addEventListener("load", (event) => {
