@@ -23,7 +23,8 @@ var showLinks = ( function(){
         if (rawFile.readyState === 4 && rawFile.status == "200") {
             callback(rawFile.responseText);
         }else{
-          console.error("showLinks=>"+"cant load data from server!")
+          //console.log(rawFile.readyState, rawFile.status)
+          //console.error("showLinks=>"+"cant load data from server!")
           //showLinks.Status = false
         }
     }
@@ -40,21 +41,35 @@ var showLinks = ( function(){
       for(i = 0; i<count; i++){
         //console.log(data[i])
         pan = document.createElement('div');
-        pan.setAttribute('id',showLinks.nameId);
-        pan.href = data[i].link;
-        name = document.createElement('div')
+        //pan.setAttribute('id',showLinks.nameId);
+        pan.classList.add("showlinks")
+        //pan.href = data[i].link;
+        name = document.createElement('a')
         name.textContent = data[i].name
-        console.log(data[i].name, data[i])
-        image = document.createElement('div')
-        image.src = data[i].preview
+        name.href = data[i].link
+        name.classList.add("name_lab", "alltext")
+        pan.append(name)
+        //console.log(data[i].name, data[i])
+        if(data[i].preview){
+          image = document.createElement('img')
+          image.src = data[i].preview
+          image.classList.add("img_lab")
+          pan.append(image)
+        }
+
         link = document.createElement('a')
         //link.href = data[i].link
         hash = document.createElement('div')
-        hash.textContent = data[i].hash
-        pan.append(name)
-        pan.append(image)
-        pan.append(link)
-        pan.append(hash)
+        hash.textContent = data[i].hashTag
+        text = document.createElement('div')
+        text.textContent = data[i].text
+        text.classList.add("text_lab", "alltext")
+
+
+        //pan.append(link)
+        //pan.append(hash)
+        pan.append(text)
+        console.log(pan)
         //showLinks.direction(showLinks.directionL)
         document.getElementById("news_view").append(pan)
       }
@@ -64,23 +79,12 @@ var showLinks = ( function(){
   showLinks.start = function(){
     console.log('load')
     showLinks.load_json()
-    this.idInterval = setInterval(showLinks.load_json, 1000 * 0.1 * 50)
+    this.idInterval = setInterval(showLinks.load_json, 1000 * 6 * 10)
   }
 
-  showLinks.displayed = function(param){
-
-  }
-
-  showLinks.Hide = function(){
-
-  }
-  
   window.addEventListener("load", (event) => {
     showLinks.start()
   });
-
-  //document.getElementById('button_news')
-
 
   return showLinks
 })();

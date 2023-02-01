@@ -1,9 +1,38 @@
-#showlinks{
-
-}
-
-.news_view{
-    word-wrap: break-word;
-    overflow-x:hidden;
-    overflow-y: auto;
-}
+.showlinks{
+    padding-left: 1%;
+    padding-bottom: 1%;
+    padding-right: 1%;
+    overflow: hidden;
+  }
+  
+  .krokusPan{
+      word-wrap: break-word;
+      overflow-x:hidden;
+      overflow-y: auto;
+  }
+  .name_lab{
+    font-size: 130%;
+    color: #FFF500;
+    display:block;
+    text-decoration: none;
+    margin:0.3%;
+  }
+  .text_lab{
+    color: #DE0052;
+    display:inline;
+    vertical-align: top;
+  }
+  
+  .alltext{
+    font-family: "lato", sans-serif;
+  
+  }
+  
+  .img_lab{
+    float:left;
+    margin-right: 1%;
+    max-width: 25%;
+    max-height: 25%;
+    display:inline;
+  }
+  
