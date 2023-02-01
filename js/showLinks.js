@@ -7,7 +7,7 @@ var showLinks = ( function(){
   showLinks.instance_ = this;
 
   showLinks.fileName = '../json/links.json';
-  showLinks.nameId = 'links';
+  showLinks.nameId = 'showlinks';
   showLinks.idInterval = '';
   showLinks.checkStr = '';                        //func 4 saving las 50 symbols and check it with new input message
   //showLinks.Status = true;
@@ -34,10 +34,10 @@ var showLinks = ( function(){
     showLinks.readTextFile(showLinks.fileName, function(text){
       let data = JSON.parse(text);        // name: 'qwerty', link: 'https://telegra.ph/Zapusk-cosmoPlayera-12-19', preview: 'jpg', hashtag: 'tttt'}
       let pan, name, image, link, preview, hash ;
-      let body = document.getElementsByTagName('body')[0];
+      //let body = document.getElementsByTagName('body')[0];
       let count = data.length;
       for(i = 0; i<count; i++){
-        console.log(data[i])
+        //console.log(data[i])
         pan = document.createElement('div');
         pan.setAttribute('id',showLinks.nameId);
         name = document.createElement('div')
