@@ -42,7 +42,7 @@ var showLinks = ( function(){
         //console.log(data[i])
         pan = document.createElement('div');
         //pan.setAttribute('id',showLinks.nameId);
-        pan.onclick = function(){window.open(data[i].link);}
+        pan.onclick = window.open(data[i].link);
         pan.classList.add("showlinks")
         //pan.href = data[i].link;
         name = document.createElement('a')
