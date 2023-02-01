@@ -54,6 +54,8 @@ var showLinks = ( function(){
   }
 
   showLinks.start = function(){
+    console.log('load')
+    showLinks.load_json()
     this.idInterval = setInterval(showLinks.load_json, 1000 * 60 * 10)
   }
 
