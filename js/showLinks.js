@@ -33,7 +33,7 @@ var showLinks = ( function(){
   showLinks.load_json = function(){
     showLinks.readTextFile(showLinks.fileName, function(text){
       let data = JSON.parse(text);        // name: 'qwerty', link: 'https://telegra.ph/Zapusk-cosmoPlayera-12-19', preview: 'jpg', hashtag: 'tttt'}
-      let pan, name, image, link, preview, hash ;
+      let pan, name, image, link, text, preview, hash ;
       //let body = document.getElementsByTagName('body')[0];
       document.getElementById("news_view").removeChild()
       let count = data.length;
@@ -41,13 +41,14 @@ var showLinks = ( function(){
         //console.log(data[i])
         pan = document.createElement('div');
         pan.setAttribute('id',showLinks.nameId);
+        pan.href = data[i].link;
         name = document.createElement('div')
         name.textContent = data[i].name
         console.log(data[i].name, data[i])
         image = document.createElement('div')
         image.src = data[i].preview
         link = document.createElement('a')
-        link.href = data[i].link
+        //link.href = data[i].link
         hash = document.createElement('div')
         hash.textContent = data[i].hash
         pan.append(name)
