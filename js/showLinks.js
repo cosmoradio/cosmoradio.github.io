@@ -41,6 +41,7 @@ var showLinks = ( function(){
         pan.setAttribute('id',showLinks.nameId);
         name = document.createElement('div')
         name.textContent = data[i].name
+        console.log(data[i].name, data[i])
         image = document.createElement('div')
         image.src = data[i].preview
         link = document.createElement('a')
