@@ -3,6 +3,7 @@
 }
 
 .news_view{
-    overflow-x:hidden;
     word-wrap: break-word;
+    overflow-x:hidden;
+    overflow-y: auto;
 }

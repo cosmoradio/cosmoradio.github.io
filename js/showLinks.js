@@ -35,6 +35,7 @@ var showLinks = ( function(){
       let data = JSON.parse(text);        // name: 'qwerty', link: 'https://telegra.ph/Zapusk-cosmoPlayera-12-19', preview: 'jpg', hashtag: 'tttt'}
       let pan, name, image, link, preview, hash ;
       //let body = document.getElementsByTagName('body')[0];
+      document.getElementById("news_view").removeChild()
       let count = data.length;
       for(i = 0; i<count; i++){
         //console.log(data[i])
