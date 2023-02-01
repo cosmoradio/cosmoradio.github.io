@@ -13,6 +13,7 @@ var showLinks = ( function(){
   //showLinks.Status = true;
   showLinks.direction = ['append', 'prepend'];
   showLinks.directionL = 0
+  showLinks.Memory = null;
 
   showLinks.readTextFile = function (file, callback) {
     let rawFile = new XMLHttpRequest();
@@ -35,7 +36,7 @@ var showLinks = ( function(){
       let pan, name, image, link, preview, hash ;
       let body = document.getElementsByTagName('body')[0];
       let count = data.length;
-      for(i = 0; i<=count; i++){
+      for(i = 0; i<count; i++){
         console.log(data[i])
         pan = document.createElement('div');
         pan.setAttribute('id',showLinks.nameId);
@@ -61,7 +62,7 @@ var showLinks = ( function(){
   showLinks.start = function(){
     console.log('load')
     showLinks.load_json()
-    this.idInterval = setInterval(showLinks.load_json, 1000 * 0.1 * 10)
+    this.idInterval = setInterval(showLinks.load_json, 1000 * 0.1 * 50)
   }
 
   showLinks.displayed = function(param){
