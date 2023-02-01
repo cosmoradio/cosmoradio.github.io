@@ -71,7 +71,7 @@ var showLinks = ( function(){
         //pan.append(link)
         //pan.append(hash)
         pan.append(text)
-        console.log(pan)
+        //console.log(pan)
         //showLinks.direction(showLinks.directionL)
         document.getElementById("news_view").append(pan)
       }
