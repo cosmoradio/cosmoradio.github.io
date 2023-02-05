@@ -43,8 +43,15 @@ var showLinks = ( function(){
         //console.log(data[i])
         pan = document.createElement('div');
         //pan.setAttribute('id',showLinks.nameId);
+        /* */
+        data[i].username = 'telegram'
+        data[i].message_id = 83
+
         pan.onclick = 'window.open('+data[i].link+");";
         pan.classList.add("showlinks")
+        pan.innerHTML = '<script async src="https://telegram.org/js/telegram-widget.js?21" data-telegram-post="'+
+        data[i].username+'/'+data[i].message_id+'" data-width="100%" data-userpic="false" data-dark="1"></script>'
+        /*
         //pan.href = data[i].link;
         name = document.createElement('a')
         name.textContent = data[i].name
@@ -66,11 +73,11 @@ var showLinks = ( function(){
         text = document.createElement('div')
         text.textContent = data[i].text
         text.classList.add("text_lab", "alltext")
-
+        */
 
         //pan.append(link)
         //pan.append(hash)
-        pan.append(text)
+        //pan.append(text)
         //console.log(pan)
         //showLinks.direction(showLinks.directionL)
         document.getElementById("news_view").append(pan)
