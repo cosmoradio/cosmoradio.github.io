@@ -49,7 +49,13 @@ var showLinks = ( function(){
 
         pan.onclick = 'window.open('+data[i].link+");";
         pan.classList.add("showlinks")
-        pan.innerHTML = '<script async src="https://telegram.org/js/telegram-widget.js?21" data-telegram-post="telegram/83" data-width="100%"></script>'
+        g = document.createElement('script')
+        g.async = true
+        g.setAttribute('src', "https://telegram.org/js/telegram-widget.js?21")
+        g.setAttribute('data-telegram-post', "telegram/83")
+        g.setAttribute('data-width', "100%")
+        pan.append(g)
+        //pan.innerHTML = '<script async src="https://telegram.org/js/telegram-widget.js?21" data-telegram-post="telegram/83" data-width="100%"></script>'
         /*
         //pan.href = data[i].link;
         name = document.createElement('a')
