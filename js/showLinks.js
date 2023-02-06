@@ -55,36 +55,7 @@ var showLinks = ( function(){
         g.setAttribute('data-telegram-post', data[i].username+"/"+data[i].message_id)
         g.setAttribute('data-width', "100%")
         pan.append(g)
-        //pan.innerHTML = '<script async src="https://telegram.org/js/telegram-widget.js?21" data-telegram-post="telegram/83" data-width="100%"></script>'
-        /*
-        //pan.href = data[i].link;
-        name = document.createElement('a')
-        name.textContent = data[i].name
-        //name.href = data[i].link
-        name.classList.add("name_lab", "alltext")
-        pan.append(name)
-        //console.log(data[i].name, data[i])
-        if(data[i].preview){
-          image = document.createElement('img')
-          image.src = data[i].preview
-          image.classList.add("img_lab")
-          pan.append(image)
-        }
 
-        link = document.createElement('a')
-        //link.href = data[i].link
-        hash = document.createElement('div')
-        hash.textContent = data[i].hashTag
-        text = document.createElement('div')
-        text.textContent = data[i].text
-        text.classList.add("text_lab", "alltext")
-        */
-
-        //pan.append(link)
-        //pan.append(hash)
-        //pan.append(text)
-        //console.log(pan)
-        //showLinks.direction(showLinks.directionL)
         document.getElementById("news_view").append(pan)
       }
     });
