@@ -53,10 +53,6 @@ var showLinks = ( function(){
     });
   }
 
-  function addPanel(){
-
-  }
-
   showLinks.update(){
     showLinks.readTextFile(showLinks.fileName, function(text){
       let data = JSON.parse(text); 
