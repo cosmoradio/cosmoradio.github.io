@@ -33,18 +33,13 @@ var showLinks = ( function(){
 
   showLinks.load_json = function(){
     showLinks.readTextFile(showLinks.fileName, function(text){
-      let data = JSON.parse(text);        // name: 'qwerty', link: 'https://telegra.ph/Zapusk-cosmoPlayera-12-19', preview: 'jpg', hashtag: 'tttt'}
-      let pan, name, image, link, preview, hash ;
-      document.getElementById("news_view").textContent = ''
+      let data = JSON.parse(text);        
+      let pan, toAdd ;
+      toAdd = document.createDocumentFragment();
       let count = data.length;
       console.log(count)
       for(i = 0; i<count; i++){
-        //console.log(data[i])
         pan = document.createElement('div');
-        //pan.setAttribute('id',showLinks.nameId);
-        /* */
-        //data[i].username = 'telegram'
-        //data[i].message_id = 83
 
         pan.onclick = 'window.open('+data[i].link+");";
         pan.classList.add("showlinks")
@@ -54,9 +49,9 @@ var showLinks = ( function(){
         g.setAttribute('data-telegram-post', data[i].username+"/"+data[i].message_id)
         g.setAttribute('data-width', "100%")
         pan.append(g)
-
-        document.getElementById("news_view").append(pan)
       }
+      document.getElementById("news_view").textContent = ''
+      document.getElementById("news_view").append(pan)
     });
   }
 
