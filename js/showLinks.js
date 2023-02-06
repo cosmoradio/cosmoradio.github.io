@@ -37,7 +37,7 @@ var showLinks = ( function(){
       let pan, name, image, link, preview, hash ;
       //let body = document.getElementsByTagName('body')[0];
       console.log(data)
-      document.getElementById("news_view").innerHTML = ''
+      document.getElementById("news_view").replaceChildren()
       let count = data.length;
       for(i = 0; i<count; i++){
         //console.log(data[i])
