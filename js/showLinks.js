@@ -44,15 +44,15 @@ var showLinks = ( function(){
         pan = document.createElement('div');
         //pan.setAttribute('id',showLinks.nameId);
         /* */
-        data[i].username = 'telegram'
-        data[i].message_id = 83
+        //data[i].username = 'telegram'
+        //data[i].message_id = 83
 
         pan.onclick = 'window.open('+data[i].link+");";
         pan.classList.add("showlinks")
         g = document.createElement('script')
         g.async = true
         g.setAttribute('src', "https://telegram.org/js/telegram-widget.js?21")
-        g.setAttribute('data-telegram-post', "telegram/83")
+        g.setAttribute('data-telegram-post', data[i].username+"/"+data[i].message_id)
         g.setAttribute('data-width', "100%")
         pan.append(g)
         //pan.innerHTML = '<script async src="https://telegram.org/js/telegram-widget.js?21" data-telegram-post="telegram/83" data-width="100%"></script>'
