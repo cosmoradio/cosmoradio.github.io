@@ -58,7 +58,7 @@ var showLinks = ( function(){
       let data = JSON.parse(text); 
       let n = document.getElementsByClassName('widget_frame_base')
       console.log(document.getElementsByClassName('widget_frame_base'))
-      console.log(document.getElementsByClassName('showLinks')) 
+      console.log(document.getElementsByClassName('showlinks')) 
     });
   }
 
