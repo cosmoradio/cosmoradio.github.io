@@ -34,8 +34,8 @@ var showLinks = ( function(){
   showLinks.load_json = function(){
     showLinks.readTextFile(showLinks.fileName, function(text){
       let data = JSON.parse(text);        
-      let pan, toAdd ;
-      toAdd = document.createDocumentFragment();
+      let pan;
+      document.getElementById("news_view").textContent = ''
       let count = data.length;
       console.log(count)
       for(i = 0; i<count; i++){
@@ -49,9 +49,9 @@ var showLinks = ( function(){
         g.setAttribute('data-telegram-post', data[i].username+"/"+data[i].message_id)
         g.setAttribute('data-width', "100%")
         pan.append(g)
+        document.getElementById("news_view").append(pan)
       }
-      document.getElementById("news_view").textContent = ''
-      document.getElementById("news_view").append(pan)
+      
     });
   }
 
