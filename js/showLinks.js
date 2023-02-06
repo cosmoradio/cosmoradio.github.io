@@ -53,7 +53,7 @@ var showLinks = ( function(){
     });
   }
 
-  showLinks.update(){
+  showLinks.update = function(){
     showLinks.readTextFile(showLinks.fileName, function(text){
       let data = JSON.parse(text); 
       let n = document.getElementsByClassName('widget_frame_base')
