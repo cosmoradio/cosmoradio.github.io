@@ -60,7 +60,9 @@ var showLinks = ( function(){
   showLinks.update(){
     showLinks.readTextFile(showLinks.fileName, function(text){
       let data = JSON.parse(text); 
-      
+      let n = document.getElementsByClassName('widget_frame_base')
+      console.log(document.getElementsByClassName('widget_frame_base'))
+      console.log(document.getElementsByClassName('showLinks'))
     });
   }
 
