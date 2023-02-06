@@ -69,7 +69,7 @@ var showLinks = ( function(){
   }
 
   window.addEventListener("load", (event) => {
-    showLinks.start()
+    //showLinks.start()
   });
 
   return showLinks
