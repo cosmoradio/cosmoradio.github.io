@@ -35,8 +35,6 @@ var showLinks = ( function(){
     showLinks.readTextFile(showLinks.fileName, function(text){
       let data = JSON.parse(text);        // name: 'qwerty', link: 'https://telegra.ph/Zapusk-cosmoPlayera-12-19', preview: 'jpg', hashtag: 'tttt'}
       let pan, name, image, link, preview, hash ;
-      //let body = document.getElementsByTagName('body')[0];
-      
       document.getElementById("news_view").textContent = ''
       let count = data.length;
       console.log(count)
