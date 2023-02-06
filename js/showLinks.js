@@ -40,7 +40,6 @@ var showLinks = ( function(){
       console.log(count)
       for(i = 0; i<count; i++){
         pan = document.createElement('div');
-
         pan.onclick = 'window.open('+data[i].link+");";
         pan.classList.add("showlinks")
         g = document.createElement('script')
@@ -51,6 +50,16 @@ var showLinks = ( function(){
         pan.append(g)
         document.getElementById("news_view").append(pan)
       }
+    });
+  }
+
+  function addPanel(){
+
+  }
+
+  showLinks.update(){
+    showLinks.readTextFile(showLinks.fileName, function(text){
+      let data = JSON.parse(text); 
       
     });
   }
@@ -58,7 +67,7 @@ var showLinks = ( function(){
   showLinks.start = function(){
     console.log('load')
     showLinks.load_json()
-    this.idInterval = setInterval(showLinks.load_json, 1000 * 6 * 10)
+    this.idInterval = setInterval(showLinks.update, 1000 * 6 * 10)
   }
 
   window.addEventListener("load", (event) => {
