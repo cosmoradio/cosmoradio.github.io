@@ -54,15 +54,16 @@ var showLinks = ( function(){
     });
   }
 
-  function addNews(){
-    pan = document.createElement('div');
-    pan.onclick = 'window.open('+data[i].link+");";
+  function addNews(a,b){
+    let g;
+    let pan = document.createElement('div');
+    //pan.onclick = 'window.open('+data[i].link+");";
     pan.classList.add("showlinks")
-    pan.setAttribute("data-id", data[i].username+"/"+data[i].message_id)
     g = document.createElement('script')
     g.async = true
+    pan.setAttribute("data-id", a+"/"+b)
     g.setAttribute('src', "https://telegram.org/js/telegram-widget.js?21")
-    g.setAttribute('data-telegram-post', data[i].username+"/"+data[i].message_id)
+    g.setAttribute('data-telegram-post', a+"/"+b)
     g.setAttribute('data-width', "100%")
     pan.append(g)
     document.getElementById("news_view").prepend(pan)
@@ -74,7 +75,7 @@ var showLinks = ( function(){
       let n = document.getElementsByClassName('showlinks')
       if((data[i].username+"/"+data[i].message_id) != n[0] ){
         console.log(data[i].username+"/"+data[i].message_id,n[0]);
-
+        addNews(data[i].username,data[i].message_id)
       }
     });
   }
