@@ -66,13 +66,13 @@ var showLinks = ( function(){
     g.setAttribute('data-telegram-post', a+"/"+b)
     g.setAttribute('data-width', "100%")
     g.setAttribute('data-dark', "1")
-    //g.setAttribute('data-userpic', "false")
+    g.setAttribute('data-userpic', (getDevType() == 'desktop')? true : false)
     pan.append(g)
     document.getElementById("news_view").prepend(pan)
   }
 
   showLinks.update = function(){
-    console.log(getDevType()+"herieirugieurhigeurhiguehr")
+    
     showLinks.readTextFile(showLinks.fileName, function(text){
       let data = JSON.parse(text); 
       let n = document.getElementsByClassName('showlinks')
@@ -81,6 +81,16 @@ var showLinks = ( function(){
         addNews(data[0].username,data[0].message_id)
       }
     });
+  }
+
+  function getDevType(){
+    var device;
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+      device = 'mobile';
+    }else{
+      device = 'desktop'
+    }
+    return device;
   }
 
   showLinks.start = function(){
