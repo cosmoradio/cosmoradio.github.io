@@ -42,6 +42,7 @@ var showLinks = ( function(){
         pan = document.createElement('div');
         pan.onclick = 'window.open('+data[i].link+");";
         pan.classList.add("showlinks")
+        pan.setAttribute("data-id", data[i].username+"/"+data[i].message_id)
         g = document.createElement('script')
         g.async = true
         g.setAttribute('src', "https://telegram.org/js/telegram-widget.js?21")
@@ -53,12 +54,28 @@ var showLinks = ( function(){
     });
   }
 
+  function addNews(){
+    pan = document.createElement('div');
+    pan.onclick = 'window.open('+data[i].link+");";
+    pan.classList.add("showlinks")
+    pan.setAttribute("data-id", data[i].username+"/"+data[i].message_id)
+    g = document.createElement('script')
+    g.async = true
+    g.setAttribute('src', "https://telegram.org/js/telegram-widget.js?21")
+    g.setAttribute('data-telegram-post', data[i].username+"/"+data[i].message_id)
+    g.setAttribute('data-width', "100%")
+    pan.append(g)
+    document.getElementById("news_view").prepend(pan)
+  }
+
   showLinks.update = function(){
     showLinks.readTextFile(showLinks.fileName, function(text){
       let data = JSON.parse(text); 
-      let n = document.getElementsByClassName('widget_frame_base')
-      console.log(document.getElementsByClassName('widget_frame_base'))
-      console.log(document.getElementsByClassName('showlinks')) 
+      let n = document.getElementsByClassName('showlinks')
+      if((data[i].username+"/"+data[i].message_id) != n[0] ){
+        console.log(data[i].username+"/"+data[i].message_id,n[0]);
+
+      }
     });
   }
 
