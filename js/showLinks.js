@@ -48,6 +48,8 @@ var showLinks = ( function(){
         g.setAttribute('src', "https://telegram.org/js/telegram-widget.js?21")
         g.setAttribute('data-telegram-post', data[i].username+"/"+data[i].message_id)
         g.setAttribute('data-width', "100%")
+        g.setAttribute('data-dark', "1")
+        g.setAttribute('data-userpic', (getDevType() == 'desktop')? true : false)
         pan.append(g)
         document.getElementById("news_view").append(pan)
       }
