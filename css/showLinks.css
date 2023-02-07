@@ -40,3 +40,6 @@
     max-width: 100%;
   }
   
+  .tgme_widget_message_bubble {
+    margin-left: 0px;
+  }
