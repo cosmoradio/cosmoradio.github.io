@@ -45,8 +45,8 @@ var showLinks = ( function(){
         pan.setAttribute("data-newsid", data[i].username+"/"+data[i].message_id)
         g = document.createElement('script')
         g.async = true
-        //g.setAttribute('src', "https://telegram.org/js/telegram-widget.js?21")
-        g.setAttribute('src', "/js/telegramWidget.js")
+        g.setAttribute('src', "https://telegram.org/js/telegram-widget.js?21")
+        
         g.setAttribute('data-telegram-post', data[i].username+"/"+data[i].message_id)
         g.setAttribute('data-width', "100%")
         g.setAttribute('data-color', "#cc00ff")
