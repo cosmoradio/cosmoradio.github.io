@@ -92,12 +92,13 @@ var showLinks = ( function(){
 
   window.addEventListener("load", (event) => {
     showLinks.start()
+    document.getElementById("news_view").addEventListener("scroll", (e) => {
+      let y=( window.pageYOffset==undefined)?(document.body || document.documentElement || document.body.parentNode).scrollTop : window.pageYOffset;
+      console.log(y)
+    });
   });
 
-  document.getElementById("news_view").addEventListener("scroll", (e) => {
-    let y=( window.pageYOffset==undefined)?(document.body || document.documentElement || document.body.parentNode).scrollTop : window.pageYOffset;
-    console.log(y)
-  });
+
 
   return showLinks
 })();
