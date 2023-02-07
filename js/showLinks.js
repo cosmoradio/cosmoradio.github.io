@@ -9,7 +9,6 @@ var showLinks = ( function(){
   showLinks.fileName = '../json/links.json';
   showLinks.nameId = 'showlinks';
   showLinks.idInterval = '';
-  showLinks.checkStr = '';                        //func 4 saving las 50 symbols and check it with new input message
   //showLinks.Status = true;
   showLinks.direction = ['append', 'prepend'];
   showLinks.directionL = 0
@@ -36,30 +35,15 @@ var showLinks = ( function(){
       let data = JSON.parse(text);        
       let pan;
       document.getElementById("news_view").textContent = ''
-      let count = data.length;
-      console.log(count)
+      //let count = data.length;
+      let count = (data.length<10 )? data.length : 10;
       for(i = 0; i<count; i++){
-        pan = document.createElement('div');
-        pan.onclick = 'window.open('+data[i].link+");";
-        pan.classList.add("showlinks")
-        if(getDevType() != 'desktop')pan.classList.add("showlinksMobile")
-        pan.setAttribute("data-newsid", data[i].username+"/"+data[i].message_id)
-        g = document.createElement('script')
-        g.async = true
-        g.setAttribute('src', "https://telegram.org/js/telegram-widget.js?21")
-        
-        g.setAttribute('data-telegram-post', data[i].username+"/"+data[i].message_id)
-        g.setAttribute('data-width', "100%")
-        g.setAttribute('data-color', "#cc00ff")
-        g.setAttribute('data-dark', "1")
-        g.setAttribute('data-userpic', (getDevType() == 'desktop')? true : false)
-        pan.append(g)
-        document.getElementById("news_view").append(pan)
+        addNews(data[i].username, data[i].message_id, false);
       }
     });
   }
 
-  function addNews(a,b){
+  function addNews(a,b,c=false){
     let g;
     let pan = document.createElement('div');
     //pan.onclick = 'window.open('+data[i].link+");";
@@ -71,9 +55,11 @@ var showLinks = ( function(){
     g.setAttribute('data-telegram-post', a+"/"+b)
     g.setAttribute('data-width', "100%")
     g.setAttribute('data-dark', "1")
+    g.setAttribute('data-color', "#cc00ff")
     g.setAttribute('data-userpic', (getDevType() == 'desktop')? true : false)
     pan.append(g)
-    document.getElementById("news_view").prepend(pan)
+    if(c){ document.getElementById("news_view").prepend(pan) }
+    else { document.getElementById("news_view").append(pan) }
   }
 
   showLinks.update = function(){
