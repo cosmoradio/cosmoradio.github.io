@@ -97,6 +97,9 @@ var showLinks = ( function(){
       let y=( window.pageYOffset==undefined)?(document.body || document.documentElement || document.body.parentNode).scrollTop : window.pageYOffset;
       console.log((x.scrollTop == x.scrollHeight))
       console.log(x.scrollTop , x.scrollHeight)
+      console.log('html.clientHeight = ' + x.clientHeight);
+      console.log('html.scrollHeight = ' + x.scrollHeight);
+      console.log('html.offsetHeight = ' + x.offsetHeight);
     });
   });
 
