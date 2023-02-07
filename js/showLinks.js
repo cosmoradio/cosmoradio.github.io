@@ -73,9 +73,9 @@ var showLinks = ( function(){
     showLinks.readTextFile(showLinks.fileName, function(text){
       let data = JSON.parse(text); 
       let n = document.getElementsByClassName('showlinks')
-      if((data[i].username+"/"+data[i].message_id) != n[0] ){
-        console.log(data[i].username+"/"+data[i].message_id,n[0]);
-        addNews(data[i].username,data[i].message_id)
+      if((data[0].username+"/"+data[0].message_id) != n[0] ){
+        console.log(data[0].username+"/"+data[0].message_id,n[0]);
+        addNews(data[0].username,data[0].message_id)
       }
     });
   }
