@@ -37,6 +37,6 @@
   }
 
   .showlinksMobile{
-    margin: 0px auto;
-    width:98%;
+    margin: 0px auto !important;
+    width:98% !important;
   }
