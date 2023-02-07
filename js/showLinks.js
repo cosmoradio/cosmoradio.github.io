@@ -49,6 +49,7 @@ var showLinks = ( function(){
         g.setAttribute('src', "telegramWidget.js")
         g.setAttribute('data-telegram-post', data[i].username+"/"+data[i].message_id)
         g.setAttribute('data-width', "100%")
+        g.setAttribute('data-color', "#cc00ff")
         g.setAttribute('data-dark', "1")
         g.setAttribute('data-userpic', (getDevType() == 'desktop')? true : false)
         pan.append(g)
