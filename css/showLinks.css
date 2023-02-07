@@ -36,10 +36,7 @@
     display:inline;
   }
 
-  .body_widget_post{
-    max-width: 100%;
-  }
-  
-  .tgme_widget_message_bubble {
-    margin-left: 0px;
+  .showlinksMobile{
+    margin: 0px auto;
+    width:98%;
   }

@@ -42,6 +42,7 @@ var showLinks = ( function(){
         pan = document.createElement('div');
         pan.onclick = 'window.open('+data[i].link+");";
         pan.classList.add("showlinks")
+        if(getDevType() != 'desktop')pan.classList.add("showlinksMobile")
         pan.setAttribute("data-newsid", data[i].username+"/"+data[i].message_id)
         g = document.createElement('script')
         g.async = true
