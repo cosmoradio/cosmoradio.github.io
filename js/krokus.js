@@ -79,6 +79,7 @@
 
       if(id == krokus.currentPan || el!=null && el.classList.contains("krokusPan") ){
         krokus.hidePanel(el);
+
         if(id == krokus.currentPan ) {
           krokus.currentPan = null;
           krokus.resetGlow()
@@ -131,7 +132,7 @@
     krokus.hidePanel = function(el){
       el.style.animation=krokus.getRandomnEfx(krokus.hiders)
       el.addEventListener('animationend',function abc()  {
-        //el.style.display = 'none'
+        el.style.display = 'none'
         el.removeEventListener('animationend', abc);
       })
     }
