@@ -61,7 +61,7 @@ var showLinks = ( function(){
     pan.classList.add("showlinks")
     g = document.createElement('script')
     g.async = true
-    pan.setAttribute("data-id", a+"/"+b)
+    pan.setAttribute("data-newsid", a+"/"+b)
     g.setAttribute('src', "https://telegram.org/js/telegram-widget.js?21")
     g.setAttribute('data-telegram-post', a+"/"+b)
     g.setAttribute('data-width', "100%")
@@ -74,7 +74,7 @@ var showLinks = ( function(){
       let data = JSON.parse(text); 
       let n = document.getElementsByClassName('showlinks')
       if((data[0].username+"/"+data[0].message_id) != n[0] ){
-        console.log(data[0].username+"/"+data[0].message_id,n[0]);
+        console.log(data[0].username+"/"+data[0].message_id,(n[0]).getAttribute("data-newsid"));
         addNews(data[0].username,data[0].message_id)
       }
     });
