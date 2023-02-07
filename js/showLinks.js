@@ -93,7 +93,7 @@ var showLinks = ( function(){
   window.addEventListener("load", (event) => {
     showLinks.start()
     let x = document.getElementById("news_view")
-    document.getElementById("news_view").addEventListener("scroll", (e) => {
+    x.addEventListener("scroll", (e) => {
       let y=( window.pageYOffset==undefined)?(document.body || document.documentElement || document.body.parentNode).scrollTop : window.pageYOffset;
       console.log(y)
       console.log(x.scrollTop)
