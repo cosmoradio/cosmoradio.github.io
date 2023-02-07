@@ -65,11 +65,14 @@ var showLinks = ( function(){
     g.setAttribute('src', "https://telegram.org/js/telegram-widget.js?21")
     g.setAttribute('data-telegram-post', a+"/"+b)
     g.setAttribute('data-width', "100%")
+    g.setAttribute('data-dark', "1")
+    //g.setAttribute('data-userpic', "false")
     pan.append(g)
     document.getElementById("news_view").prepend(pan)
   }
 
   showLinks.update = function(){
+    console.log(getDevType()+"herieirugieurhigeurhiguehr")
     showLinks.readTextFile(showLinks.fileName, function(text){
       let data = JSON.parse(text); 
       let n = document.getElementsByClassName('showlinks')
