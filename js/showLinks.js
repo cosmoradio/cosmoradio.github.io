@@ -42,7 +42,7 @@ var showLinks = ( function(){
         pan = document.createElement('div');
         pan.onclick = 'window.open('+data[i].link+");";
         pan.classList.add("showlinks")
-        pan.setAttribute("data-id", data[i].username+"/"+data[i].message_id)
+        pan.setAttribute("data-newsid", data[i].username+"/"+data[i].message_id)
         g = document.createElement('script')
         g.async = true
         g.setAttribute('src', "https://telegram.org/js/telegram-widget.js?21")
