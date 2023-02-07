@@ -73,7 +73,7 @@ var showLinks = ( function(){
     showLinks.readTextFile(showLinks.fileName, function(text){
       let data = JSON.parse(text); 
       let n = document.getElementsByClassName('showlinks')
-      if((data[0].username+"/"+data[0].message_id) != n[0] ){
+      if((data[0].username+"/"+data[0].message_id) != (n[0]).getAttribute("data-newsid") ){
         console.log(data[0].username+"/"+data[0].message_id,(n[0]).getAttribute("data-newsid"));
         addNews(data[0].username,data[0].message_id)
       }
