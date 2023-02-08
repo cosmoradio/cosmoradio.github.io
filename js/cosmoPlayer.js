@@ -50,7 +50,7 @@
     }
     
     document.getElementById("button_video").addEventListener('click', function(){
-      let z = document.getElementById("video_view")
+      let z = document.getElementById("yt_player")
       z.style.display = (z.style.display == 'block')? "none" : "block"
     });
   })
