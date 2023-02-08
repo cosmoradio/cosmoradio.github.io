@@ -39,9 +39,9 @@ var showLinks = ( function(){
         i = offset;
       }
       for(i; i<count; i++){
-        if(i>data.length){
+        if(i>=data.length){
           console.log(123213);
-          break;
+          return
         }
         addNews(data[i].username, data[i].message_id, false);
       }
@@ -104,7 +104,6 @@ var showLinks = ( function(){
       //console.log((((x.scrollHeight - Math.round(x.scrollTop)) - x.clientHeight)<10));
       if(((x.scrollHeight - Math.round(x.scrollTop)) - x.clientHeight)<10) {
         let y = document.getElementById('news_view').children.length
-        console.log("down");
         showLinks.load_json(y)
       }
 
