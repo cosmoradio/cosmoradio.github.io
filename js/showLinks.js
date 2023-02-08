@@ -38,8 +38,11 @@ var showLinks = ( function(){
       }else{
         i = offset;
       }
-
       for(i; i<count; i++){
+        if(data.indexOf(i) == -1) {
+          console.log("dgrthtyh")
+          break
+        }
         addNews(data[i].username, data[i].message_id, false);
       }
     });
@@ -96,9 +99,7 @@ var showLinks = ( function(){
     /// get count of elements
     /// load with ofset 
     let c = document.getElementsByClassName('showLinks').length 
-  
     showLinks.load_json(c)
-    //for (i = c;i<m)
   }
 
   window.addEventListener("load", (event) => {
