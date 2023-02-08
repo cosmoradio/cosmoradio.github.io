@@ -39,9 +39,9 @@ var showLinks = ( function(){
         i = offset;
       }
       for(i; i<count; i++){
-        if(data.indexOf(i) == -1) {
-          console.log("dgrthtyh")
-          break
+        if(i>data.length){
+          console.log(123213);
+          break;
         }
         addNews(data[i].username, data[i].message_id, false);
       }
