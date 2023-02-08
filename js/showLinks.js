@@ -96,11 +96,8 @@ var showLinks = ( function(){
     x.addEventListener("scroll", (e) => {
       let y=( window.pageYOffset==undefined)?(document.body || document.documentElement || document.body.parentNode).scrollTop : window.pageYOffset;
 
-      console.log('html.clientHeight = ' + x.clientHeight);
-      console.log('html.scrollHeight = ' + x.scrollHeight);
-      console.log('html.offsetHeight = ' + x.offsetHeight);
-      console.log('html.pageYOffset = ' + x.pageYOffset);
-      console.log('html.pageYOffset = ' + x.pageYOffset);
+      console.log('html.pageYOffset = ' + x.innerHeight);
+      console.log('html.pageYOffset = ' + x.scrollY);
     });
   });
 
