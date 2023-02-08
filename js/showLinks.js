@@ -9,9 +9,6 @@ var showLinks = ( function(){
   showLinks.fileName = '../json/links.json';
   showLinks.nameId = 'showlinks';
   showLinks.idInterval = '';
-  //showLinks.Status = true;
-  showLinks.direction = ['append', 'prepend'];
-  showLinks.directionL = 0
   showLinks.Memory = null;
 
   showLinks.readTextFile = function (file, callback) {
@@ -33,9 +30,7 @@ var showLinks = ( function(){
   showLinks.load_json = function(){
     showLinks.readTextFile(showLinks.fileName, function(text){
       let data = JSON.parse(text);        
-      let pan;
       document.getElementById("news_view").textContent = ''
-      //let count = data.length;
       let count = (data.length<10 )? data.length : 10;
       for(i = 0; i<count; i++){
         addNews(data[i].username, data[i].message_id, false);
@@ -90,14 +85,20 @@ var showLinks = ( function(){
     this.idInterval = setInterval(showLinks.update, 1000 * 6 * 1)
   }
 
+  showLinks.download = function(){
+    /// get count of elements
+    /// load with ofset 
+    let c = document.getElementsByClassName('showLinks').length
+    let m = c + 10
+    for ()
+  }
+
   window.addEventListener("load", (event) => {
     showLinks.start()
     let x = document.getElementById("news_view")
     x.addEventListener("scroll", (e) => {
-      let y=( window.pageYOffset==undefined)?(document.body || document.documentElement || document.body.parentNode).scrollTop : window.pageYOffset;
-      let z = x.scrollHeight - Math.round(x.scrollTop) === x.clientHeight;
-      console.log(x.scrollHeight - Math.round(x.scrollTop) === x.clientHeight);
-      console.log(x.scrollHeight - Math.round(x.scrollTop) +'____'+x.clientHeight);
+      //let z = x.scrollHeight - Math.round(x.scrollTop) === x.clientHeight;
+      showLinks.download()
     });
   });
 
