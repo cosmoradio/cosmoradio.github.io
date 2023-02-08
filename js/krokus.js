@@ -21,11 +21,11 @@
       /*width: 100%;*/
       height: 100%;
       position: absolute;
-      background-color: rgba(180, 0, 255, 0.06);
+      /*background-color: rgba(180, 0, 255, 0.06);
       border-top: 2px solid rgba(110, 27, 133, 0.61);
       border-right: 2px solid rgba(108, 36, 132, 0.81);
       border-bottom: 5px solid #4B21B5;
-      border-left: 5px solid #4C14C8;
+      border-left: 5px solid #4C14C8;*/
       filter: drop-shadow(29px 24px 31px #541C6D);
     }
     .krokusGlow{
