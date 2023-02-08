@@ -100,12 +100,12 @@ var showLinks = ( function(){
     let x = document.getElementById("news_view")
     x.addEventListener("scroll", (e) => {
       let z = x.scrollHeight - Math.round(x.scrollTop) === x.clientHeight;
-      console.log(x.scrollHeight +' '+ Math.round(x.scrollTop) +' '+ x.clientHeight)
-      console.log((((x.scrollHeight - Math.round(x.scrollTop)) - x.clientHeight)<10));
+      //console.log(x.scrollHeight +' '+ Math.round(x.scrollTop) +' '+ x.clientHeight)
+      //console.log((((x.scrollHeight - Math.round(x.scrollTop)) - x.clientHeight)<10));
       if(((x.scrollHeight - Math.round(x.scrollTop)) - x.clientHeight)<10) {
         let y = document.getElementById('news_view').children.length
         console.log("down");
-        showLinks.load_json(c)
+        showLinks.load_json(y)
       }
 
     });
