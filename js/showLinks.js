@@ -40,7 +40,6 @@ var showLinks = ( function(){
       }
       for(i; i<count; i++){
         if(i>=data.length){
-          console.log(123213);
           return
         }
         addNews(data[i].username, data[i].message_id, false);
