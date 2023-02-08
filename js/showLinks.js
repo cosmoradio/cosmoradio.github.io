@@ -108,10 +108,10 @@ var showLinks = ( function(){
     x.addEventListener("scroll", (e) => {
       let z = x.scrollHeight - Math.round(x.scrollTop) === x.clientHeight;
       console.log(z)
-      console.log(document.getElementsByClassName('showLinks'));
+      console.log(document.getElementsById('news_view'));
       if(x.scrollHeight - Math.round(x.scrollTop) === x.clientHeight) {
         let y = document.getElementsByClassName('showLinks').length
-        console.log(document.getElementsByClassName('showLinks'));
+        console.log(document.getElementsById('news_view'));
         showLinks.download(y);
       }
 
