@@ -48,6 +48,10 @@
         }
       };
     }
+    let z = document.getElementById("button_video")
+    z.addEventListener('click', function(){
+      z.style.display = (z.style.display == 'block')? "none" : "block"
+    });
   })
 
   cosmoPlayer.buttClick = function(){
