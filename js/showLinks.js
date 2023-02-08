@@ -95,9 +95,9 @@ var showLinks = ( function(){
     let x = document.getElementById("news_view")
     x.addEventListener("scroll", (e) => {
       let y=( window.pageYOffset==undefined)?(document.body || document.documentElement || document.body.parentNode).scrollTop : window.pageYOffset;
-
-      console.log('html.pageYOffset = ' + x.innerHeight);
-      console.log('html.pageYOffset = ' + x.scrollY);
+      let z = x.scrollHeight - Math.round(x.scrollTop) === x.clientHeight;
+      console.log(x.scrollHeight - Math.round(x.scrollTop) === x.clientHeight);
+      console.log(x.scrollHeight - Math.round(x.scrollTop) +'____'+x.clientHeight;);
     });
   });
 
