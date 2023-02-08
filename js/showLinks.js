@@ -97,7 +97,7 @@ var showLinks = ( function(){
       let y=( window.pageYOffset==undefined)?(document.body || document.documentElement || document.body.parentNode).scrollTop : window.pageYOffset;
       let z = x.scrollHeight - Math.round(x.scrollTop) === x.clientHeight;
       console.log(x.scrollHeight - Math.round(x.scrollTop) === x.clientHeight);
-      console.log(x.scrollHeight - Math.round(x.scrollTop) +'____'+x.clientHeight;);
+      console.log(x.scrollHeight - Math.round(x.scrollTop) +'____'+x.clientHeight);
     });
   });
 
