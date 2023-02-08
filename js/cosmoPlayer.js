@@ -48,8 +48,9 @@
         }
       };
     }
-    let z = document.getElementById("button_video")
-    z.addEventListener('click', function(){
+    
+    document.getElementById("button_video").addEventListener('click', function(){
+      let z = document.getElementById("video_view")
       z.style.display = (z.style.display == 'block')? "none" : "block"
     });
   })
