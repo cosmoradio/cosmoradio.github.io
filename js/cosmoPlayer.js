@@ -70,7 +70,7 @@
     //let bodyr = document.getElementsByTagName('body')[0]
     let bodyr = document.getElementById('video_view')
     let ifr = document.createElement('iframe')
-    ifr.id = cosmoPlayer.idYTBPlayer)
+    ifr.id = cosmoPlayer.idYTBPlayer
     cosmoPlayer.readTextFile(cosmoPlayer.fileStream, function(text){
       ifr.src = text;
     });
