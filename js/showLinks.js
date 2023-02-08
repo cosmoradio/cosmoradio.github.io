@@ -95,13 +95,6 @@ var showLinks = ( function(){
     this.idInterval = setInterval(showLinks.update, 1000 * 6 * 1)
   }
 
-  showLinks.download = function(){
-    /// get count of elements
-    /// load with ofset 
-    let c = document.getElementsByClassName('showLinks').length 
-    showLinks.load_json(c)
-  }
-
   window.addEventListener("load", (event) => {
     showLinks.start()
     let x = document.getElementById("news_view")
@@ -111,8 +104,8 @@ var showLinks = ( function(){
       console.log((((x.scrollHeight - Math.round(x.scrollTop)) - x.clientHeight)<10));
       if(((x.scrollHeight - Math.round(x.scrollTop)) - x.clientHeight)<10) {
         let y = document.getElementById('news_view').children.length
-        console.log(document.getElementById('news_view').children.length);
-        showLinks.download(y);
+        console.log("down");
+        showLinks.load_json(c)
       }
 
     });
