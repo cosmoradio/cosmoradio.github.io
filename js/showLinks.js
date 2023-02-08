@@ -9,7 +9,7 @@ var showLinks = ( function(){
   showLinks.fileName = '../json/links.json';
   showLinks.nameId = 'showlinks';
   showLinks.idInterval = '';
-  showLinks.Memory = null;
+  showLinks.offset = 10;
 
   showLinks.readTextFile = function (file, callback) {
     let rawFile = new XMLHttpRequest();
@@ -27,12 +27,19 @@ var showLinks = ( function(){
     rawFile.send(null);
   }
 
-  showLinks.load_json = function(){
+  showLinks.load_json = function(offset = 0){
     showLinks.readTextFile(showLinks.fileName, function(text){
-      let data = JSON.parse(text);        
-      document.getElementById("news_view").textContent = ''
-      let count = (data.length<10 )? data.length : 10;
-      for(i = 0; i<count; i++){
+      let data = JSON.parse(text);
+      let count, i;
+      count = (data.length < showLinks.offset)? data.length : (offset + showLinks.offset)// если меньше чем showLinks.offset, загрузи сколько есть
+      if(offset ==  0){
+        i = 0;
+        document.getElementById("news_view").textContent = ''
+      }else{
+        i = offset;
+      }
+
+      for(i; i<count; i++){
         addNews(data[i].username, data[i].message_id, false);
       }
     });
@@ -88,9 +95,10 @@ var showLinks = ( function(){
   showLinks.download = function(){
     /// get count of elements
     /// load with ofset 
-    let c = document.getElementsByClassName('showLinks').length
-    let m = c + 10
-    for ()
+    let c = document.getElementsByClassName('showLinks').length 
+  
+    showLinks.load_json(c)
+    //for (i = c;i<m)
   }
 
   window.addEventListener("load", (event) => {
