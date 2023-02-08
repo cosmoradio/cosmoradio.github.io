@@ -108,7 +108,7 @@ var showLinks = ( function(){
     x.addEventListener("scroll", (e) => {
       let z = x.scrollHeight - Math.round(x.scrollTop) === x.clientHeight;
       console.log(x.scrollHeight +' '+ Math.round(x.scrollTop) +' '+ x.clientHeight)
-      console.log(((x.scrollHeight - Math.round(x.scrollTop)) - x.clientHeight)<10));
+      console.log((((x.scrollHeight - Math.round(x.scrollTop)) - x.clientHeight)<10));
       if(((x.scrollHeight - Math.round(x.scrollTop)) - x.clientHeight)<10) {
         let y = document.getElementById('news_view').children.length
         console.log(document.getElementById('news_view').children.length);
