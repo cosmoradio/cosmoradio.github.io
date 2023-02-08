@@ -107,7 +107,13 @@ var showLinks = ( function(){
     let x = document.getElementById("news_view")
     x.addEventListener("scroll", (e) => {
       //let z = x.scrollHeight - Math.round(x.scrollTop) === x.clientHeight;
-      if(x.scrollHeight - Math.round(x.scrollTop) === x.clientHeight) fshowLinks.download();
+      if(x.scrollHeight - Math.round(x.scrollTop) === x.clientHeight) {
+        let y = document.getElementsByClassName('showLinks').length
+        console.log(y);
+
+        showLinks.download(y);
+      }
+
     });
   });
 
