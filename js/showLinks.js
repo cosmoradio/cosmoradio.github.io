@@ -110,7 +110,7 @@ var showLinks = ( function(){
       console.log(z)
       if(x.scrollHeight - Math.round(x.scrollTop) === x.clientHeight) {
         let y = document.getElementsByClassName('showLinks').length
-        console.log(y);
+        console.log(document.getElementsByClassName('showLinks'));
         showLinks.download(y);
       }
 
