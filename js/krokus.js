@@ -11,6 +11,7 @@
     krokus.hiders = ['extShowFade'];
     krokus.showers = ['entShowFade'];
     krokus.tempNamePan = 'krokusDiv'
+    krokus.hold = false
     krokus.currentPan = null;
     krokus.currentGlw = null;
     krokus.pcatch = '';
@@ -76,7 +77,7 @@
   
     krokus.triger = function(id,w = 93){
       let el = document.getElementById(krokus.currentPan)
-
+      if(krokus.hold == true)return
       if(id == krokus.currentPan || el!=null && el.classList.contains("krokusPan") ){
         krokus.hidePanel(el);
 
@@ -130,10 +131,12 @@
     }
   
     krokus.hidePanel = function(el){
+      krokus.hold = true
       el.style.animation=krokus.getRandomnEfx(krokus.hiders)
       el.addEventListener('animationend',function abc()  {
         el.style.display = 'none'
         el.removeEventListener('animationend', abc);
+        krokus.hold = false
       })
     }
   
