@@ -109,10 +109,10 @@ var showLinks = ( function(){
       let z = x.scrollHeight - Math.round(x.scrollTop) === x.clientHeight;
       console.log(z)
       console.log(x.scrollHeight + Math.round(x.scrollTop) + x.clientHeight)
-      console.log(document.getElementsById('news_view'));
+      console.log(document.getElementById('news_view'));
       if(x.scrollHeight - Math.round(x.scrollTop) === x.clientHeight) {
         let y = document.getElementsByClassName('showLinks').length
-        console.log(document.getElementsById('news_view'));
+        console.log(document.getElementById('news_view'));
         showLinks.download(y);
       }
 
