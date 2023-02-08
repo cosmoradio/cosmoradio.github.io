@@ -75,7 +75,7 @@
       ifr.src = text;
     });
     ifr.setAttribute('allow',"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture")
-    //ifr.style.display = 'none'
+    ifr.style.display = 'block'
     bodyr.append(ifr)
   }
 
