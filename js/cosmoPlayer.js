@@ -70,12 +70,12 @@
     //let bodyr = document.getElementsByTagName('body')[0]
     let bodyr = document.getElementById('video_view')
     let ifr = document.createElement('iframe')
-    ifr.setAttribute('id',cosmoPlayer.idYTBPlayer)
+    ifr.id = cosmoPlayer.idYTBPlayer)
     cosmoPlayer.readTextFile(cosmoPlayer.fileStream, function(text){
       ifr.src = text;
     });
     ifr.setAttribute('allow',"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture")
-    ifr.style.display = 'none'
+    //ifr.style.display = 'none'
     bodyr.append(ifr)
   }
 
