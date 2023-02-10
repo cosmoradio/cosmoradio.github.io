@@ -65,6 +65,7 @@ var showLinks = ( function(){
     if(c){ document.getElementById("news_view").prepend(pan) }
     else { document.getElementById("news_view").append(pan) }
     pan.addEventListener("load", function(){
+      console.log('trhrthrthrt')
       let child = pan.getElementsByTagName('iframe')[0]
       console.log(child)
     });
