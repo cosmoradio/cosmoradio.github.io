@@ -64,16 +64,10 @@ var showLinks = ( function(){
     pan.append(g)
     if(c){ document.getElementById("news_view").prepend(pan) }
     else { document.getElementById("news_view").append(pan) }
-<<<<<<< HEAD
     let child = pan.getElementsByTagName('iframe')[0]
     
     console.log(child.getElementsByTagName('body')[0])
     child.addEventListener("load", function(){
-=======
-    //let child = pan.getElementsByTagName('iframe')[0]
-    console.log(pan.getElementsByTagName('iframe'))
-    pan.addEventListener("load", function(){
->>>>>>> bae0e59c7fbcaced41fd20ba8a9a856f12b0b283
       console.log(pan.getElementsByTagName('iframe')[0])
     })
     let p = document.createElement("link");
