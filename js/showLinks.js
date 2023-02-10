@@ -64,12 +64,13 @@ var showLinks = ( function(){
     pan.append(g)
     if(c){ document.getElementById("news_view").prepend(pan) }
     else { document.getElementById("news_view").append(pan) }
-    console.log(pan.getElementsByTagName('iframe'))
-    pan.addEventListener("load", function(){
-      console.log('trhrthrthrt')
-      let child = pan.getElementsByTagName('iframe')[0]
-      console.log(child)
-    });
+    let child = pan.getElementsByTagName('iframe')[0]
+    let d = child.getElementsByTagName('html')
+    let p = document.createElement("link");
+    p.href = "showLinks.css"; 
+    p.rel = "stylesheet"; 
+    p.type = "text/css"; 
+    child.document.head.appendChild(cssLink);
   }
 
   showLinks.update = function(){
