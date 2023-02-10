@@ -69,7 +69,7 @@ var showLinks = ( function(){
     p.href = "showLinks.css"; 
     p.rel = "stylesheet"; 
     p.type = "text/css"; 
-    child.document.head.appendChild(cssLink);
+    //child.document.head.appendChild(cssLink);
   }
 
   showLinks.update = function(){
