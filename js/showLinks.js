@@ -67,9 +67,7 @@ var showLinks = ( function(){
     let child = pan.getElementsByTagName('iframe')[0]
     
     //console.log(child.getElementsByTagName('body')[0])
-    child.addEventListener("load", function(){
-      console.log(pan.getElementsByTagName('iframe')[0])
-    })
+
     let p = document.createElement("link");
     p.href = "showLinks.css"; 
     p.rel = "stylesheet"; 
