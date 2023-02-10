@@ -64,6 +64,10 @@ var showLinks = ( function(){
     pan.append(g)
     if(c){ document.getElementById("news_view").prepend(pan) }
     else { document.getElementById("news_view").append(pan) }
+    pan.addEventListener("load", function(){
+      let child = pan.getElementsByTagName('iframe')[0]
+      console.log(child)
+    });
   }
 
   showLinks.update = function(){
