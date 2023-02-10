@@ -65,6 +65,7 @@ var showLinks = ( function(){
     if(c){ document.getElementById("news_view").prepend(pan) }
     else { document.getElementById("news_view").append(pan) }
     let child = pan.getElementsByTagName('iframe')[0]
+    console.log(child)
     let p = document.createElement("link");
     p.href = "showLinks.css"; 
     p.rel = "stylesheet"; 
