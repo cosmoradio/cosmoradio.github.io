@@ -51,7 +51,7 @@
     
     document.getElementById("button_video").addEventListener('click', function(){
       let z = document.getElementById("yt_player")
-      z.style.display = (document.getElementById("button_video").classList.contains('krokusGlow'))? "block" : "none"
+      //z.style.display = (document.getElementById("button_video").classList.contains('krokusGlow'))? "block" : "none"
     });
   })
 
@@ -75,7 +75,7 @@
       ifr.src = text;
     });
     ifr.setAttribute('allow',"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture")
-    ifr.style.display = 'none'
+    //ifr.style.display = 'none'
     bodyr.append(ifr)
   }
 
