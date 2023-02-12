@@ -10,7 +10,8 @@
     pinned.idPanel = 'pinned_view'
   
     pinned.listNewbi = {'КУЛЬТПРОСВЕТ' : "https://www.youtube.com/@Kultprosvet1917",
-                        "REDNESS" : "https://www.youtube.com/@redness4879"
+                        "REDNESS" : "https://www.youtube.com/@redness4879",
+                        "тов. Marcus Flavius Mangustus" : "https://marcus-mangust.livejournal.com/"
                       }
   
     pinned.listContact = {'RADIOCOSMOPOLIT(telegram)' : "https://t.me/radiocosmopolit",
