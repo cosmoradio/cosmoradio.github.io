@@ -60,9 +60,9 @@
 }
 ::-webkit-scrollbar-thumb {
     background:#272328;
-    border: thin solid gray;
+    /*border: thin solid gray;*/
     border-radius:10px;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background:#7d7d7d;
+    /*background:#7d7d7d;*/
 }
