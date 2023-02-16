@@ -34,7 +34,6 @@
     gamepage.loadGameList = function(){
       let p = document.getElementById(gamepage.idPanGamePage)
       p.textContent = '';
-      console.log(p)
       for (let i in gamepage.gamelist){
         let d = document.createElement("div");
         d.style.display = "block"
