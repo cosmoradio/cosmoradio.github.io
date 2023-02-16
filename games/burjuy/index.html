@@ -316,13 +316,13 @@
   });
 
   document.addEventListener('touchmove', function (e) {
-    e.preventDefault();
+    //e.preventDefault();
     clientX = e.changedTouches[0].clientX + document.body.scrollLeft;
     clientY = e.changedTouches[0].clientY + document.body.scrollTop;
     mouseActive = true;
 
-    you.style.left = clientX + 'px';
-    you.style.top = clientY + 'px';
+    you.style.left = (clientX-26) + 'px';
+    you.style.top = (clientY-26) + 'px';
 
     // stop adding score when a user is not moving mouse
     if(mouseActiveTimer) {
