@@ -34,7 +34,7 @@
     gamepage.loadGameList = function(){
       let p = document.getElementById(gamepage.idPanGamePage)
       p.textContent = '';
-      let d = createElement("h2")
+      let d = document.createElement("h2")
       d.textContent = "ИГРЫ"
       p.append(d)
       for (let i in gamepage.gamelist){
