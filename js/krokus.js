@@ -26,7 +26,7 @@
       border-right: 2px solid rgba(108, 36, 132, 0.81);
       border-bottom: 5px solid #4B21B5;
       border-left: 5px solid #4C14C8;*/
-      filter: drop-shadow(29px 24px 31px #541C6D);
+      /*filter: drop-shadow(29px 24px 31px #541C6D);*/
     }
     .krokusGlow{
       text-shadow: rgb(164 0 255) 0px 0px 19px;
