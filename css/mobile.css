@@ -12,7 +12,7 @@ body{
 .title {
   top:0;
   font-family: "lato", sans-serif;
-  font-weight: 300;
+  font-weight: bold;
   letter-spacing: 2px;
 }
 .textGlow{
