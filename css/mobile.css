@@ -16,7 +16,7 @@ body{
   letter-spacing: 2px;
 }
 .textGlow{
-  background: -webkit-linear-gradient(#ff0076, white);
+  background: -webkit-linear-gradient(#ff0076, #862796);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

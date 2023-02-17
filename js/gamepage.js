@@ -34,10 +34,14 @@
     gamepage.loadGameList = function(){
       let p = document.getElementById(gamepage.idPanGamePage)
       p.textContent = '';
+      let d = createElement("h2")
+      d.textContent = "ИГРЫ"
+      p.append(d)
       for (let i in gamepage.gamelist){
         let d = document.createElement("div");
         d.style.display = "block"
         d.style.color = '#fd0272';
+        d.style.fontFamily = "lato, sans-serif";
         d.textContent = gamepage.gamelist[i]
         d.onclick = function(){
           gamepage.loadGame(gamepage.gamelist[i])

@@ -21,7 +21,7 @@ table {
   letter-spacing: 7px;
 }
 #title span {
-  background: -webkit-linear-gradient(#ff0076, white);
+  background: -webkit-linear-gradient(#ff0076, #862796);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
