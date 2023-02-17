@@ -33,6 +33,10 @@
         a = document.createElement('a')
         //a.style.color = "white"
         a.innerHTML = key
+        a.style.color = "transparent";    
+        a.style.webkitBackgroundClip: text;
+        a.style.backgroundClip: text;
+        a.style.backgroundImage: linear-gradient(90deg, red, orange, fuchsia);
         a.onclick = function(){
           window.open(pinned.listNewbi[key], '_blank').focus()
         }
