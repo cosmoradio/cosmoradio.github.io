@@ -44,11 +44,12 @@
   </div>
   <script>
     function fullscreen(){
-      if (!document.fullscreenElement) {
-          document.documentElement.requestFullscreen();
+      let a = document.getElementById("window_visor")
+      if (!a.fullscreenElement) {
+          a.documentElement.requestFullscreen();
       } else {
-        if (document.exitFullscreen) {
-          document.exitFullscreen();
+        if (a.exitFullscreen) {
+          a.exitFullscreen();
         }
       }
     }
