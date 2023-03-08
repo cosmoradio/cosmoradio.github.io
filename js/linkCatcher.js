@@ -5,5 +5,5 @@ window.addEventListener("load", function(){linkCatcher()});
 
 function linkCatcher(){
 
-    console.log(window.location.hash,window.location.search)
+    console.log(window.location)
 }
