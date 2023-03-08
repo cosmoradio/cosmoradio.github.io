@@ -1,9 +1,9 @@
 // thats is alpha version/ creater !EVOL!
 
 // we need catch something hrefs, and exec it
-window.addEventListener("load", function(){linkcatcher()});
+window.addEventListener("load", function(){linkCatcher()});
 
-function linkcatcher(){
+function linkCatcher(){
 
     console.log(window.location.hash,window.location.search)
 }
