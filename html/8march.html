@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+</head>
+<style>
+html,body{
+  width:100%;
+  height:100%;
+  background-color: #000414;
+}
+#text{
+  width:100%;
+  height:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff0000;
+  font-family: system-ui;
+  FONT-SIZE: large;
+ }
+ .glitch {
+     color: rgb(223, 191, 191);
+     position: relative;
+     font-size: 9vw;
+     // margin: 70px 200px;
+     animation: glitch 1s 5s infinite;
+   }
+
+   .glitch::before {
+     content: attr(data-text);
+     position: absolute;
+     left: -2px;
+     text-shadow: -5px 0 magenta;
+     background: black;
+     overflow: hidden;
+     top: 0;
+     animation: noise-1 4s linear infinite alternate-reverse, glitch 5s 5.05s infinite;
+   }
+
+   .glitch::after {
+     content: attr(data-text);
+     position: absolute;
+     left: 2px;
+     text-shadow: -5px 0 lightgreen;
+     background: black;
+     overflow: hidden;
+     top: 0;
+     animation: noise-2 2s linear infinite alternate-reverse, glitch 3s 5s infinite;
+   }
+
+   @keyframes glitch {
+     1%{
+       transform: rotateX(10deg) skewX(90deg);
+     }
+     2%{
+       transform: rotateX(0deg) skewX(0deg);
+     }
+   }
+
+   @keyframes noise-1 {
+     $steps: 30;
+     @for $i from 1 through $steps {
+       #{percentage($i*(1/$steps))} {
+         $top: random(100);
+         $bottom: random(101 - $top);
+         clip-path: inset(#{$top}px 0 #{$bottom}px 0);
+       }
+     }
+   }
+
+   @keyframes noise-2 {
+     $steps: 30;
+     @for $i from 0 through $steps {
+       #{percentage($i*(1/$steps))} {
+         $top: random(100);
+         $bottom: random(101 - $top);
+         clip-path: inset(#{$top}px 0 #{$bottom}px 0);
+       }
+     }
+   }
+
+   .scanlines {
+     overflow: hidden;
+     mix-blend-mode: difference;
+   }
+
+   .scanlines::before {
+     content: "";
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     top: 0;
+     left: 0;
+
+     background: repeating-linear-gradient(
+       to bottom,
+       transparent 0%,
+       rgba(255, 255, 255, 0.05) .5%,
+       transparent 1%
+     );
+
+     animation: fudge 7s ease-in-out alternate infinite;
+   }
+
+
+   @keyframes fudge {
+     from {
+       transform: translate(0px, 0px);
+     }
+     to {
+       transform: translate(0px, 2%);
+     }
+   }
+
+   .glow {
+     @extend .glitch;
+     text-shadow: 0 0 1000px rgb(223, 191, 191);
+
+     position: absolute;
+     top: 0;
+   }
+
+
+   @keyframes glitch-2 {
+     1%{
+       transform: rotateX(10deg) skewX(70deg);
+     }
+     2%{
+       transform: rotateX(0deg) skewX(0deg);
+     }
+   }
+
+</style>
+<body >
+  <div id="text" class="scanlines">
+    <pre>
+      Стоит ли напоминать, что 8 марта это не просто международный женский день - это праздник, когда мы отдаем дань уважения женщинам,
+        которые боролись за свои права, и в последствии преобразовали мир в лучшую сторону.
+          Этих женщин вы прекрасно знаете и помните - это и Александра Коллонтай, и Роза Люксембург и Клара Цеткин,
+            и соратница В. Ленина  - Надежда Крупская.
+             Многие женщины внесли разный вклад в коммунистическую идею - и каждый вклад был важен.
+
+      Было бы огромной ошибкой желать вам в этот день что-то примитивное, будь-то оставаться всегда молодыми,
+        красивыми, любимыми и миллионы прочих пожеланий, и не пожелав то, без чего этот праздник теряет свою сущность.
+
+      Вы наши боевые подруги,  мы вас ценим, любим и уважаем. На текущий момент могу с уверенностью заявить,
+       что в левом движении сейчас очень мало представительниц прекрасного пола, поэтому такие кадры очень важны.
+        От себя могу лишь сказать сейчас в этот день, чтобы пламя желания преобразовывать этот мир, пламя борьбы
+          и пламя любви никогда не угасали в вашей душе и глазах (как бы это идеалистически не звучало).
+
+      Желаю не растворятся в тяжести бытия и "бытовухи", и чтобы все проблемы, с которыми вы столкнетесь вам было легко и интересно решать!
+       Решать совместно со своими боевыми товарищами!
+
+                                                              С праздником вас!
+
+     </pre>
+  </div>
+</body>
+</html>
