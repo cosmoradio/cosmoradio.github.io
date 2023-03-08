@@ -6,4 +6,5 @@ window.addEventListener("load", function(){linkCatcher()});
 function linkCatcher(){
 
     console.log(document.referrer)
+    console.log(window === window.parent)
 }
