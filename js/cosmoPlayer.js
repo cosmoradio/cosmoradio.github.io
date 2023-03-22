@@ -14,56 +14,26 @@
   cosmoPlayer.srcLinkStr = ''
 
   /*    event onload     */
+
   window.addEventListener("load", function(event) {
-    try {
-      cosmoPlayer.addElement();
-      cosmoPlayer.setUrlClick();
-
-      document.getElementById(cosmoPlayer.idButPlayer).onclick = function(){
-        let name = document.getElementById(cosmoPlayer.idButPlayer).src
-        if(!name.includes('img/1play.png') )  {
-          document.getElementById('buttPlayer').src = 'img/1play.png'
-          cosmoPlayer.controlPlayer("play");
-        }else{
-          document.getElementById('buttPlayer').src = 'img/1pause.png'  ;
-          cosmoPlayer.controlPlayer("pause");
-        }
-      };
-    }
-    catch (e) {   }
-  });
-
-  document.addEventListener('DOMContentLoaded', function(){
-    //if(document.getElementById(cosmoPlayer.idButPlayer).onclick)alert(123)
-    //thath is schachluy. i set here it becose window.onload not work in mobile verthion/ please love schachluy
-    if(!document.getElementById(cosmoPlayer.idButPlayer).onclick){
-      document.getElementById(cosmoPlayer.idButPlayer).onclick = function(){
-        let name = document.getElementById(cosmoPlayer.idButPlayer).src
-        if(!name.includes('img/1play.png') )  {
-          document.getElementById('buttPlayer').src = 'img/1play.png'
-          cosmoPlayer.controlPlayer("play");
-        }else{
-          document.getElementById('buttPlayer').src = 'img/1pause.png'  ;
-          cosmoPlayer.controlPlayer("pause");
-        }
-      };
-    }
-    
-    document.getElementById("button_video").addEventListener('click', function(){
-      let z = document.getElementById("yt_player")
-      //z.style.display = (document.getElementById("button_video").classList.contains('krokusGlow'))? "block" : "none"
-    });
+    cosmoPlayer.onLoad()
   })
 
-  cosmoPlayer.buttClick = function(){
-    let name = document.getElementById(cosmoPlayer.idButPlayer).src
-    if(!name.includes('img/1play.png') )  {
-      document.getElementById('buttPlayer').src = 'img/1play.png'
-      cosmoPlayer.controlPlayer("play");
-    }else{
-      document.getElementById('buttPlayer').src = 'img/1pause.png'  ;
-      cosmoPlayer.controlPlayer("pause");
-    }
+
+  cosmoPlayer.onLoad = function(){
+    cosmoPlayer.centrizer()
+    cosmoPlayer.addElement();
+    cosmoPlayer.setUrlClick();
+
+   document.getElementById(cosmoPlayer.idButPlayer).onclick = function(){
+     if(document.getElementById(cosmoPlayer.idButPlayer).classList.contains("paused")){
+       document.getElementById(cosmoPlayer.idButPlayer).classList.remove("paused")
+       cosmoPlayer.controlPlayer("play");
+     }else{
+       document.getElementById(cosmoPlayer.idButPlayer).classList.add("paused")
+       cosmoPlayer.controlPlayer("pause");
+     }
+   }
   }
 
   cosmoPlayer.addElement = function(){
@@ -92,8 +62,22 @@
   }
 
   cosmoPlayer.setUrlClick = function(){
-    document.getElementById('title').click =
-     "window.open( cosmoPlayer.controlPlayer('getVideoUrl')  , '_blank' ).focus()"
+    document.getElementById('title').addEventListener("click", function(){
+      cosmoPlayer.controlPlayer('pause')
+      //window.open( cosmoPlayer.controlPlayer('getVideoUrl')  , '_blank' ).focus()
+    });
+  }
+
+  cosmoPlayer.centrizer =  function(){
+    /**/
+    let width = window.innerWidth || html.clientWidth;
+    let aa = document.getElementById('button_news').getBoundingClientRect();
+    let wText = aa.width
+    let lText = aa.left
+    let d = (width-aa.left)-(wText/2)
+
+    document.getElementById('menu').scrollTo((width-wText)-d, 0);
+    console.log(width,wText)
   }
 
 

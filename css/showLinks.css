@@ -1,68 +1,69 @@
 .showlinks{
-    padding-left: 1%;
-    padding-bottom: 1%;
-    padding-right: 1%;
-    overflow: hidden;
-  }
-  
-  .krokusPan{
-      word-wrap: break-word;
-      overflow-x:hidden;
-      overflow-y: auto;
-  }
-  .name_lab{
-    font-size: 130%;
-    color: #FFF500;
-    display:block;
-    text-decoration: none;
-    margin:0.3%;
-  }
-  .text_lab{
-    color: #DE0052;
-    display:inline;
-    vertical-align: top;
-  }
-  
-  .alltext{
-    font-family: "lato", sans-serif;
-  
-  }
-  
-  .img_lab{
-    float:left;
-    margin-right: 1%;
-    max-width: 25%;
-    max-height: 25%;
-    display:inline;
-  }
+  padding-left: 1%;
+  padding-bottom: 1%;
+  padding-right: 1%;
+  overflow: hidden;
+}
 
-  .showlinksMobile{
-    margin: 0px auto !important;
-    width:98% !important;
-  }
+.krokusPan{
+    word-wrap: break-word;
+    overflow-x:hidden;
+    overflow-y: auto;
+}
+.name_lab{
+  font-size: 130%;
+  color: #FFF500;
+  display:block;
+  text-decoration: none;
+  margin:0.3%;
+}
+.text_lab{
+  color: #DE0052;
+  display:inline;
+  vertical-align: top;
+}
 
-  #yt_player{
-    width:100%;
-    height: 99.5%;
-  }
-  ::-webkit-scrollbar {
-    width: 10px;
+.alltext{
+  font-family: "lato", sans-serif;
+
+}
+
+.img_lab{
+  float:left;
+  margin-right: 1%;
+  max-width: 25%;
+  max-height: 25%;
+  display:inline;
+}
+
+.showlinksMobile{
+  margin: 0px auto !important;
+  width:98% !important;
+}
+
+#yt_player{
+  width:100%;
+  height: 99.5%;
+}
+::-webkit-scrollbar {
+  width: 10px;
 }
 ::-webkit-scrollbar-button {
-    width: 4px;
-    height:5px;
+  width: 4px;
+  height:5px;
 }
 ::-webkit-scrollbar-track {
-    /*background:#eee;*/
-    /*border: thin solid lightgray;*/
-    /*box-shadow: 0px 0px 3px #dfdfdf inset;*/
-    border-radius:6px;
+  /*background:#eee;*/
+  /*border: thin solid lightgray;*/
+  /*box-shadow: 0px 0px 3px #dfdfdf inset;*/
+  border-radius:6px;
 }
 ::-webkit-scrollbar-thumb {
-    background:#272328;
-    /*border: thin solid gray;*/
-    border-radius:10px;
+  background:#272328;
+  /*border: thin solid gray;*/
+  border-radius:10px;
 }
-::-webkit-scrollbar-thumb:hover {
-    /*background:#7d7d7d;*/
+
+::-webkit-scrollbar-thumb :hover {
+  /*background:#7d7d7d;*/
 }
