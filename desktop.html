@@ -15,27 +15,19 @@
   <script src='./js/krokus.js'></script>
 </head>
 <body>
-  <div id="container" style="margin:0;position:relative;z-index:1">
-    <div class='none' id="screen">
-      <table>
-        <tr>
-          <td>
-            <img src="./img/logo.png" style='width:110%;display:block;'></img>
-          </td>
-          <td style='width:10%;'>
-            <img src="./img/1pause.png" style='width:100%;display:block;' id='buttPlayer' onclick='buttPlayer()'></img>
-          </td>
-          <td style="width:75%; vertical-align:top">
-            <div id="title">
-              <span id ="songname">Press play</span>
-              <span id ="artist">70`s Radio Funkie Soul stream</span>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td colspan="3"></td>
-        </tr>
-      </table>
+  <div id="container" style="margin:10px;position:relative;z-index:1">
+    <div style="display:inline-block;">
+        <div style="display: inline-block;">
+          <div class="label unselectable" style="font-size:365%;">Radio</div>
+          <div class="label unselectable" style="font-size:430%;">CosmO</div>
+        </div>
+        <div style="display: inline-block;">
+          <div class="label paused" style="font-size:700%;" id='buttPlayer' onclick='buttPlayer()'>▶</div>
+        </div >
+        <div id="title">
+          <span id ="songname">Press play</span>
+          <span id ="artist">70`s Radio Funkie Soul stream</span>
+        </div>
     </div>
   </div>
   <div class="box_visor" style='display:block;'>
