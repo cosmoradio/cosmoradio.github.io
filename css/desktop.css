@@ -19,6 +19,7 @@ table {
   font-family: "lato", sans-serif;
   font-weight: bold;
   letter-spacing: 7px;
+  display:inline-block;
 }
 #title span {
   background: -webkit-linear-gradient(#ff0076, #862796);
@@ -27,4 +28,45 @@ table {
 }
 .buttons:hover{
   font-size:2.2em;
+}
+
+.label{
+  font-family: myFirstFont;
+  text-shadow: 1px 1px 0 #fd0272,
+               2px 2px 0 #fd0188,
+               3px 3px 0 #c101a4,
+               4px 4px 0 #8401b8,
+               5px 5px 0 #4800cd,
+               6px 6px 5px #06067e;
+  font-weight: bold;
+  text-align: center;
+  right: 0;
+  left: 0;
+  line-height: 39px;
+  margin: 0;
+  -webkit-text-stroke: 1px #ffffff;
+  color: transparent;
+
+}
+
+.paused{
+  -webkit-filter: grayscale(70%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(70%);
+}
+.unselectable {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;           /* Non-prefixed version, currently
+                                  not supported by any browser */
+}
+
+@font-face {
+  font-family: myFirstFont;
+  src: url(../fonts/MuseoSansDisplay-ExtraBlack.woff2);
+}
+@media screen (max-width:620px){
+
 }
