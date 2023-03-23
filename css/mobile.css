@@ -138,6 +138,9 @@ iframe{
     margin:0px !important;
     width:102% !important;
   }
+  #menu::-webkit-scrollbar{
+    display:none;
+  }
 }
 
 
