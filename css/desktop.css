@@ -53,6 +53,10 @@ table {
   -webkit-filter: grayscale(70%); /* Safari 6.0 - 9.0 */
   filter: grayscale(70%);
 }
+
+#video_view{
+  overflow: hidden;
+}
 .unselectable {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none;   /* Chrome/Safari/Opera */
