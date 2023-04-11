@@ -1,0 +1,52 @@
+.marquee-outer {
+  /*width: 100%;*/
+  overflow: hidden;
+}
+
+.marquee-inner {
+  animation-name: marquee;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  position: relative;
+}
+
+@keyframes marquee_sudak {
+  0% {
+    left: 0%;
+  }
+  50%{
+    left: -60%;
+  }
+  51% {
+    /*left: 100%;*/
+  }
+  100%{
+    left:0%;
+  }
+}
+@keyframes marquee {
+  0% {
+    left: 0%;
+  }
+  20%{
+    left:0%;
+  }
+  50%{
+    left: -100%;
+  }
+  51% {
+    visibility: hidden;
+    left: -100%;
+  }
+  51.01%{
+    left: 100%;
+  }
+  65%{
+    left:100%;
+    visibility: visible;
+  }
+  100%{
+    left:0%;
+  }
+}
