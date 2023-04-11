@@ -128,6 +128,7 @@ CHANGE TIME REQUEST!
     }
   
     cosmoPlayer.relayMarquee2 = function(id,text){
+      alert(12)
       let t = document.getElementById(id)
       t.textContent = text;
       if((t.getBoundingClientRect().width+t.getBoundingClientRect().left)> window.innerWidth && !t.classList.contains("marquee-inner") ){
@@ -135,11 +136,11 @@ CHANGE TIME REQUEST!
           let d = window.innerWidth - t.getBoundingClientRect().left // free space
           if(t.getBoundingClientRect().width > d){
             d = t.getBoundingClientRect().width - d
-            t.style.width = d +'px'
+            t.style.width = 400 +'px'
             //alert(1)
           }else{
             //alert(2)
-            t.style.width = d+'px'
+            t.style.width = 400+'px'
           }
         //t.style.width = t.getBoundingClientRect().width - window.innerWidth - t.getBoundingClientRect().left  +'px'
         t.classList.add("marquee-inner")
