@@ -136,11 +136,11 @@ CHANGE TIME REQUEST!
           let d = window.innerWidth - t.getBoundingClientRect().left // free space
           if(t.getBoundingClientRect().width > d){
             d = t.getBoundingClientRect().width - d
-            t.style.width = 400 +'px'
+            t.style.width = d +'px'
             //alert(1)
           }else{
             //alert(2)
-            t.style.width = 400+'px'
+            t.style.width = d+'px'
           }
         //t.style.width = t.getBoundingClientRect().width - window.innerWidth - t.getBoundingClientRect().left  +'px'
         t.classList.add("marquee-inner")
