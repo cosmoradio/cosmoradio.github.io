@@ -23,6 +23,8 @@ table {
   font-weight: bold;
   letter-spacing: 7px;
   display:inline-block;
+  white-space: nowrap;
+  overflow: hidden;
 }
 #title span {
   background: -webkit-linear-gradient(#ff0076, #862796);
