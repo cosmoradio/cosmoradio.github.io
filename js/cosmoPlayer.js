@@ -123,12 +123,11 @@ CHANGE TIME REQUEST!
         */
         //document.getElementById("artist").textContent = cosmoPlayer.ytplayer.getVideoData().title;
         //document.getElementById("songname").textContent = cosmoPlayer.stream.radio.nowplay.programm
-        cosmoPlayer.relayMarquee2("artist", cosmoPlayer.ytplayer.getVideoData().title)
-        cosmoPlayer.relayMarquee2("songname", cosmoPlayer.stream.radio.nowplay.programm)
+        cosmoPlayer.relayMarquee("artist", cosmoPlayer.ytplayer.getVideoData().title)
+        cosmoPlayer.relayMarquee("songname", cosmoPlayer.stream.radio.nowplay.programm)
     }
   
-    cosmoPlayer.relayMarquee2 = function(id,text){
-      alert(12)
+    cosmoPlayer.relayMarquee = function(id,text){
       let t = document.getElementById(id)
       t.textContent = text;
       if((t.getBoundingClientRect().width+t.getBoundingClientRect().left)> window.innerWidth && !t.classList.contains("marquee-inner") ){
@@ -137,9 +136,7 @@ CHANGE TIME REQUEST!
           if(t.getBoundingClientRect().width > d){
             d = t.getBoundingClientRect().width - d
             t.style.width = d +'px'
-            //alert(1)
           }else{
-            //alert(2)
             t.style.width = d+'px'
           }
         //t.style.width = t.getBoundingClientRect().width - window.innerWidth - t.getBoundingClientRect().left  +'px'
@@ -148,29 +145,7 @@ CHANGE TIME REQUEST!
         if(t.classList.contains("marquee-inner"))t.classList.remove("marquee-inner")
       }
     }
-    cosmoPlayer.relayMarquee = function(id,text){
-      let t = document.getElementById(id)
-      t.textContent = text;
-      if((t.getBoundingClientRect().width+t.getBoundingClientRect().left)> window.innerWidth ){
-          console.log(t.getBoundingClientRect().right)
-        if(t.tagName != 'marquee'){
-          let q = Math.abs(window.innerWidth - t.getBoundingClientRect().width )
-          let r = document.createElement('marquee')
-          let c = t.cloneNode(true)
-          c.style.display = 'inline-block'
-          r.appendChild(c)
-          t.parentNode.appendChild(r);
-          t.parentNode.style.width = q+'px'
-          t.remove()
-        }
-        //r.textContent = text;
-      }
-      else if((t.getBoundingClientRect().width+t.getBoundingClientRect().left)< window.innerWidth ){
-        //t.parentNode.parentNode.appendChild(t)
-        //t.parentNode.remove()
-      }
-  
-    }
+
     cosmoPlayer.onPlayerError = function(e){
       //console.log(e.target)
       switch(e.data){
