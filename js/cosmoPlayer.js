@@ -1,7 +1,7 @@
 ;var cosmoPlayer = ( function(){
     'use strict'
     /*
-  
+CHANGE TIME REQUEST!
     */
     function cosmoPlayer(){
       if (cosmoPlayer.instance_) {
