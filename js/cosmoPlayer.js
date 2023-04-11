@@ -100,7 +100,7 @@ CHANGE TIME REQUEST!
       cosmoPlayer.ytplayer = new YT.Player( cosmoPlayer.idYTBPlayer, {
         height: '100%',
         width: '100%',
-        videoId : (cosmoPlayer.playlist.list[cosmoPlayer.playlist.current]||cosmoPlayer.stream.radio.streams[0]),
+        videoId : (cosmoPlayer.playlist?.list[cosmoPlayer.playlist.current]||cosmoPlayer.stream.radio.streams[0]),
         events: {
           'onStateChange': cosmoPlayer.onPlayerStateChange,
           'onReady': cosmoPlayer.onPlayerReady,
