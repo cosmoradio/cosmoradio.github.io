@@ -18,7 +18,7 @@ CHANGE TIME REQUEST!
     cosmoPlayer.fileStream = './json/stream.json'
     cosmoPlayer.stream = {};// тут обьект с файла  cosmoPlayer.fileStream
     cosmoPlayer.ytplayer = null;// обьект плеера
-    cosmoPlayer.requestInterval = 5;// in seccond
+    cosmoPlayer.requestInterval = 30;// in seccond
     cosmoPlayer.idSetinterval = null;
     cosmoPlayer.playlist = {list: null,current:0};
   
@@ -100,7 +100,8 @@ CHANGE TIME REQUEST!
       cosmoPlayer.ytplayer = new YT.Player( cosmoPlayer.idYTBPlayer, {
         height: '100%',
         width: '100%',
-        videoId : ( cosmoPlayer.playlist?.list[cosmoPlayer.playlist?.current] || cosmoPlayer.stream.radio.streams[0] ),
+        //videoId : ( cosmoPlayer.playlist?.list[cosmoPlayer.playlist?.current] || cosmoPlayer.stream.radio.streams[0] ),
+        videoId : (cosmoPlayer.playlist.list)?cosmoPlayer.playlist.list[cosmoPlayer.playlist.current]:cosmoPlayer.stream.radio.streams[0],
         events: {
           'onStateChange': cosmoPlayer.onPlayerStateChange,
           'onReady': cosmoPlayer.onPlayerReady,
