@@ -18,6 +18,8 @@ iframe{
   font-family: "lato", sans-serif;
   font-weight: bold;
   letter-spacing: 2px;
+}
+.titlewrap{
   white-space: nowrap;
   overflow: hidden;
 }

@@ -175,7 +175,7 @@ CHANGE TIME REQUEST!
       //console.log("cosmoPlayer Error",e);
     }
     cosmoPlayer.onPlayerStateChange = function(e){
-      console.log(e.data)
+      //console.log(e.data)
       switch(e.data) {
         case 0:
           console.log('video ended');
