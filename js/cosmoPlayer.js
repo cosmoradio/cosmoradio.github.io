@@ -53,14 +53,16 @@ CHANGE TIME REQUEST!
  }
 
  cosmoPlayer.trigerPlaybutton = function(tr = false){
-   if(document.getElementById(cosmoPlayer.idButPlayer).classList.contains("paused") || tr == "play"){
-     document.getElementById(cosmoPlayer.idButPlayer).classList.remove("paused")
-     cosmoPlayer.ytplayer.playVideo();
-   }else{
-     document.getElementById(cosmoPlayer.idButPlayer).classList.add("paused")
-     cosmoPlayer.ytplayer.pauseVideo();
-   }
- }
+  if(document.getElementById(cosmoPlayer.idButPlayer).classList.contains("paused") ){
+    if(tr == "pause")return 0;
+    document.getElementById(cosmoPlayer.idButPlayer).classList.remove("paused")
+    cosmoPlayer.ytplayer.playVideo();
+  }else{
+    if(tr == "play" )return 0;
+    document.getElementById(cosmoPlayer.idButPlayer).classList.add("paused")
+    cosmoPlayer.ytplayer.pauseVideo();
+  }
+}
 
  cosmoPlayer.loadStream = function(){
    cosmoPlayer.readTextFile(cosmoPlayer.fileStream, function(text){
