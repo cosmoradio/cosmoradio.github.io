@@ -45,11 +45,8 @@ CHANGE TIME REQUEST!
 
     cosmoPlayer.centrizer();
     cosmoPlayer.addElement();
-    cosmoPlayer.setUrlClick();
 
-   document.getElementById(cosmoPlayer.idButPlayer).onclick = function(){
-     cosmoPlayer.trigerPlaybutton()
-   }
+   document.getElementById(cosmoPlayer.idButPlayer).onclick = function(){ cosmoPlayer.trigerPlaybutton() }
  }
 
  cosmoPlayer.trigerPlaybutton = function(tr = false){
@@ -131,6 +128,10 @@ CHANGE TIME REQUEST!
       //document.getElementById("songname").textContent = cosmoPlayer.stream.radio.nowplay.programm
       cosmoPlayer.relayMarquee("artist", cosmoPlayer.ytplayer.getVideoData().title)
       cosmoPlayer.relayMarquee("songname", cosmoPlayer.stream.radio.nowplay.programm)
+      document.getElementById('title').onclick = function(){
+        window.open(cosmoPlayer.ytplayer.getVideoUrl())
+      }
+      
   }
 
   cosmoPlayer.relayMarquee = function(id,text){
@@ -153,7 +154,7 @@ CHANGE TIME REQUEST!
   }
 
   cosmoPlayer.onPlayerError = function(e){
-    console.log(e.data == '150')
+    //console.log(e.data == '150')
     switch(e.data){
       case '2':
         //console.log("The request contains an invalid parameter value")
@@ -193,7 +194,7 @@ CHANGE TIME REQUEST!
         break;
       case 2:
         // YT.PlayerState.PAUSED
-        //console.log('video paused at '+cosmoPlayer.player.getCurrentTime());
+        //console.log();
         cosmoPlayer.trigerPlaybutton("pause")
         break;
       case 3:
@@ -201,45 +202,33 @@ CHANGE TIME REQUEST!
         //cosmoPlayer.updater();
         break;
       case 4:
-        //console.log('video paused at '+autoplayer.player.getCurrentTime());
+        //console.log();
         break;
       case 5:
         // YT.PlayerState.CUED
         // Playing not started
-        console.log(cosmoPlayer.ytplayer.getVideoData().title)
+        //console.log(cosmoPlayer.ytplayer.getVideoData().title)
         //console.log('video paused at '+autoplayer.player.getCurrentTime());
         break;
       case -1:
         // Playing not started
         let q =cosmoPlayer.ytplayer.getVideoData();
-        if(q.errorCode) {
-          console.log(cosmoPlayer.ytplayer.getVideoData().title)
-          //alert(q.errorCode)
-          cosmoPlayer.Next()
-        }
+        if(q.errorCode) {  cosmoPlayer.Next()  }
         console.log('Playing not started');
         break;
     }
   }
 
-  cosmoPlayer.Play = function(){
-
-  }
-
   cosmoPlayer.Next = function(){
-    console.log(cosmoPlayer.playlist.current,"cur")
-    //cosmoPlayer.playlist.current+=1;// ++ making 0,0,1,2,3
+    //cosmoPlayer.playlist.current+=1;// 
     cosmoPlayer.playlist.current++;// ++ making 0,0,1,2,3
-    console.log(cosmoPlayer.playlist.current,"cur")
     if( cosmoPlayer.playlist.list === null /*|| cosmoPlayer.playlist.current == (cosmoPlayer.playlist.list.length-1)*/  ){//ok
       cosmoPlayer.playlist.list = cosmoPlayer.stream.radio.streams;
       cosmoPlayer.playlist.current = 0;
     }
     cosmoPlayer.ytplayer.loadVideoById(cosmoPlayer.playlist.list[cosmoPlayer.playlist.current]);
     if(!document.getElementById(cosmoPlayer.idButPlayer).classList.contains("paused")){
-      //cosmoPlayer.ytplayer.pauseVideo();
     }
-    //console.log(cosmoPlayer.ytplayer.getVideoData())
   }
 
   cosmoPlayer.readTextFile = function (file, callback) {
