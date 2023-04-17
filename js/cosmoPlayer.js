@@ -149,23 +149,23 @@ CHANGE TIME REQUEST!
     cosmoPlayer.onPlayerError = function(e){
       //console.log(e.target)
       switch(e.data){
-        case 2:
+        case '2':
           //console.log("The request contains an invalid parameter value")
           cosmoPlayer.Next();
           break;
-        case 5:
+        case '5':
           console.log("The requested content cannot be played in an HTML5 player or another error related to the HTML5 player has occurred.")
           cosmoPlayer.Next();
           break;
-        case 100:
+        case '100':
           console.log("The video requested was not found. This error occurs when a video has been removed (for any reason) or has been marked as private.")
           cosmoPlayer.Next();
           break;
-        case 101:
+        case '101':
           console.log("The owner of the requested video does not allow it to be played in embedded players.")
           cosmoPlayer.Next();
           break;
-        case 150:
+        case '150':
           console.log("not found or licens privacy. call next ");
           cosmoPlayer.Next();
           break;
@@ -222,6 +222,7 @@ CHANGE TIME REQUEST!
         cosmoPlayer.playlist.list = cosmoPlayer.stream.radio.streams;
         cosmoPlayer.playlist.current = 0;
       }
+
       cosmoPlayer.ytplayer.loadVideoById(cosmoPlayer.playlist.list[cosmoPlayer.playlist.current]);
     }
   
