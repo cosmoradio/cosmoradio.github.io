@@ -218,7 +218,7 @@ CHANGE TIME REQUEST!
       console.log("current is "+cosmoPlayer.playlist.current)
       cosmoPlayer.playlist.current++;// ++ making 0,0,1,2,3
       //if( cosmoPlayer.playlist.current >= cosmoPlayer.playlist.list.length ){
-      if( !cosmoPlayer.playlist.list[cosmoPlayer.playlist.current] ){//ok
+      if( cosmoPlayer.playlist.list.includes(cosmoPlayer.playlist.current) === false ){//ok
         cosmoPlayer.playlist.list = cosmoPlayer.stream.radio.streams;
         cosmoPlayer.playlist.current = 0;
       }
