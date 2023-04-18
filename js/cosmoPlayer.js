@@ -70,30 +70,19 @@ CHANGE TIME REQUEST!
           cosmoPlayer.stream = t;
           cosmoPlayer.playlist.list = cosmoPlayer.stream.radio.playlist
 
-          //if(cosmoPlayer.stream.radio.movement != null ){//<------
-          //cosmoPlayer.ytplayer.loadVideoById(cosmoPlayer.playlist.list[cosmoPlayer.playlist.current])
           if(cosmoPlayer.ytplayer){
             cosmoPlayer.playlist.current = 0
             cosmoPlayer.ytplayer.loadVideoById(cosmoPlayer.playlist.list[cosmoPlayer.playlist.current])
           }
-          //console.log(cosmoPlayer.ytplayer.getVideoUrl())
-          //cosmoPlayer.ytplayer.playVideo()
-          //}
         }
-     }catch(e){
-       console.log(e,text);
-
-     }
+     }catch(e){ console.log(e,text); }
    });
  }
 
   cosmoPlayer.addElement = function(){
-    //let bodyr = document.getElementsByTagName('body')[0]
     let bodyr = document.getElementById('video_view')
     let ifr = document.createElement('div')
     ifr.setAttribute('id',cosmoPlayer.idYTBPlayer)
-    //ifr.setAttribute('allow',"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture")
-    //ifr.src = cosmoPlayer.prepareLink(cosmoPlayer.stream.radio.streams[0])
     bodyr.append(ifr);
 
   }
@@ -111,8 +100,6 @@ CHANGE TIME REQUEST!
         'onError': cosmoPlayer.onPlayerError,
       }
     });
-    //console.log(cosmoPlayer.ytplayer);
-    //cosmoPlayer.loadStream();//?
   }
 
   cosmoPlayer.onPlayerReady = function(e){
@@ -124,14 +111,12 @@ CHANGE TIME REQUEST!
       MTHFCKER SAYS:
         Тут  релей должен автоматом менять тэг  div на marquee и назад с привязкой по ширене блока.
       */
-      //document.getElementById("artist").textContent = cosmoPlayer.ytplayer.getVideoData().title;
-      //document.getElementById("songname").textContent = cosmoPlayer.stream.radio.nowplay.programm
       cosmoPlayer.relayMarquee("artist", cosmoPlayer.ytplayer.getVideoData().title)
       cosmoPlayer.relayMarquee("songname", cosmoPlayer.stream.radio.nowplay.programm)
       document.getElementById('title').onclick = function(){
         window.open(cosmoPlayer.ytplayer.getVideoUrl())
       }
-      
+
   }
 
   cosmoPlayer.relayMarquee = function(id,text){
@@ -220,7 +205,7 @@ CHANGE TIME REQUEST!
   }
 
   cosmoPlayer.Next = function(){
-    //cosmoPlayer.playlist.current+=1;// 
+    //cosmoPlayer.playlist.current+=1;//
     cosmoPlayer.playlist.current++;// ++ making 0,0,1,2,3
     if( cosmoPlayer.playlist.list === null /*|| cosmoPlayer.playlist.current == (cosmoPlayer.playlist.list.length-1)*/  ){//ok
       cosmoPlayer.playlist.list = cosmoPlayer.stream.radio.streams;
