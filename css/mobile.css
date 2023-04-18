@@ -88,6 +88,11 @@ iframe{
     margin-right: auto;
 
   }
+
+  #yt_player{
+    height:62% !important;
+  }
+
   #songname{
     text-align: center;
     font-size: 50px;

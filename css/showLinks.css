@@ -43,8 +43,8 @@
 
 #yt_player{
   width:100%;
-  /*height: 99.5%;*/
-  height:62%;
+  height: 99.5%;
+  /*height:62%;*/
 }
 #yt_player:fullscreen{
   height: 99.5%;
