@@ -123,15 +123,18 @@ CHANGE TIME REQUEST!
     let t = document.getElementById(id)
     t.textContent = text;
     if((t.getBoundingClientRect().width+t.getBoundingClientRect().left)> window.innerWidth && !t.classList.contains("marquee-inner") ){
+        /*
         let c = 0;
         let d = window.innerWidth - t.getBoundingClientRect().left // free space
-        if(t.getBoundingClientRect().width > d){
+        if(t.getBoundingClientRect().width > d){// если ширина больше свободного с лева
           d = t.getBoundingClientRect().width - d
           t.style.width = d +'px'
         }else{
           t.style.width = d+'px'
+          //t.style.width = '100%';
         }
-      //t.style.width = t.getBoundingClientRect().width - window.innerWidth - t.getBoundingClientRect().left  +'px'
+        */
+        t.style.width = '100%';
       t.classList.add("marquee-inner")
     }else{
       if(t.classList.contains("marquee-inner"))t.classList.remove("marquee-inner")
