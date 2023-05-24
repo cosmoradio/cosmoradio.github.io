@@ -5,11 +5,13 @@ html{
   text-align: left;
   font-size: 50px;
   display:block;
+  width: min-content;
 }
 #artist{
   text-align: left;
   font-size: 25px;
   display:block;
+  width: min-content;
 }
 table {
   width: 100%;
