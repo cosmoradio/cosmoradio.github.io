@@ -23,10 +23,11 @@ CHANGE TIME REQUEST!
   cosmoPlayer.playlist = {list: null,current:0};
 
   /*    event onload     */
-
+  /*
   window.addEventListener("load", function(event) {
     //cosmoPlayer.onLoad()
   });
+  */
 
   document.addEventListener("DOMContentLoaded", function(){
     //include YT API
@@ -111,6 +112,7 @@ CHANGE TIME REQUEST!
       MTHFCKER SAYS:
         Тут  релей должен автоматом менять тэг  div на marquee и назад с привязкой по ширене блока.
       */
+
       cosmoPlayer.relayMarquee("artist", cosmoPlayer.ytplayer.getVideoData().title)
       cosmoPlayer.relayMarquee("songname", cosmoPlayer.stream.radio.nowplay.programm)
       document.getElementById('title').onclick = function(){
@@ -123,9 +125,11 @@ CHANGE TIME REQUEST!
     let t = document.getElementById(id)
     t.textContent = text;
     if((t.getBoundingClientRect().width+t.getBoundingClientRect().left)> window.innerWidth && !t.classList.contains("marquee-inner") ){
-        /*
+        
         let c = 0;
         let d = window.innerWidth - t.getBoundingClientRect().left // free space
+
+        /*
         if(t.getBoundingClientRect().width > d){// если ширина больше свободного с лева
           d = t.getBoundingClientRect().width - d
           t.style.width = d +'px'
@@ -133,8 +137,8 @@ CHANGE TIME REQUEST!
           t.style.width = d+'px'
           //t.style.width = '100%';
         }
-        */
-        t.style.width = '100%';
+        /**/
+        //t.style.width = '100%';
       t.classList.add("marquee-inner")
     }else{
       if(t.classList.contains("marquee-inner"))t.classList.remove("marquee-inner")
