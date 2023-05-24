@@ -98,6 +98,7 @@ iframe{
     text-align: center;
     font-size: 50px;
     display:block;
+    width: min-content;
   }
   #artist{
     text-align: center;
@@ -176,6 +177,7 @@ iframe{
       text-align: left;
       font-size: 35px;
       display:block;
+      width: min-content;
     }
     #artist{
       text-align: left;
