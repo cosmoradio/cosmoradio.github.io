@@ -125,8 +125,8 @@ CHANGE TIME REQUEST!
     let t = document.getElementById(id)
     let r = document.getElementById('title')
     t.textContent = text;
-    r.style.width =  window.innerWidth - (document.getElementById("buttPlayer").getBoundingClientRect().left+document.getElementById("buttPlayer").offsetWidth)+"px"
-    console.log("wwwwwwwwwwwwwwwwwww",document.body.clientWidth,"lrft"+document.getElementById("buttPlayer").getBoundingClientRect().left)
+    r.style.width =  window.innerWidth - (document.getElementById("buttPlayer").getBoundingClientRect().left+document.getElementById("buttPlayer").offsetWidth)-30+"px"
+    
     /*
     if((t.getBoundingClientRect().width+t.getBoundingClientRect().left)> window.innerWidth && !t.classList.contains("marquee-inner") ){
         
