@@ -125,19 +125,6 @@ CHANGE TIME REQUEST!
     let t = document.getElementById(id)
     let r = document.getElementById('title')
     t.textContent = text;
-    /*
-    r.style.width =  window.innerWidth - (document.getElementById("buttPlayer").getBoundingClientRect().left+document.getElementById("buttPlayer").offsetWidth)-30+"px"
-    if(window.innerWidth < t.style.width && !t.classList.contains("marquee-inner")){
-      if(r.classList.contains("titlewrap")){
-        r.style.width = 'inherit'
-      }else{
-        r.style.width =  window.innerWidth - (document.getElementById("buttPlayer").getBoundingClientRect().left+document.getElementById("buttPlayer").offsetWidth)-30+"px"
-      }
-      t.classList.add("marquee-inner")
-    }else{
-      if(t.classList.contains("marquee-inner"))t.classList.remove("marquee-inner");
-    }
-    */
    
     if(window.innerWidth < t.offsetWidth){
       if(r.classList.contains("titlewrap")){
@@ -150,19 +137,6 @@ CHANGE TIME REQUEST!
     }else{
       if(t.classList.contains("marquee-inner"))t.classList.remove("marquee-inner");
     }
-
-   /*
-   запихнуть текст
-   проверить ширина экрана меньше чем текст
-   если да
-      смотрим есть ли титлврап
-        если есть = 
-          titlewrap.width:inherit
-          songname.width = 100%
-        если нет = 
-          ckj;yfz vfnbvfnbxbcrbb fgbhfwsz
-      
-   */
 
   }
 
