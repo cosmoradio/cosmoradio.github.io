@@ -145,6 +145,9 @@ CHANGE TIME REQUEST!
       }else{
         r.style.width =  window.innerWidth - (document.getElementById("buttPlayer").getBoundingClientRect().left+document.getElementById("buttPlayer").offsetWidth)-30+"px"
       }
+      if(!t.classList.contains("marquee-inner"))t.classList.add("marquee-inner")
+    }else{
+      if(t.classList.contains("marquee-inner"))t.classList.remove("marquee-inner");
     }
 
    /*
