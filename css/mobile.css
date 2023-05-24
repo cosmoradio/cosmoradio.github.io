@@ -20,6 +20,7 @@ iframe{
   letter-spacing: 2px;
 }
 .titlewrap{
+  display:inline-block;
   white-space: nowrap;
   overflow: hidden;
 }
