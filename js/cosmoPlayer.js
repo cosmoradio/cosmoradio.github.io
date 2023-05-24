@@ -123,10 +123,13 @@ CHANGE TIME REQUEST!
 
   cosmoPlayer.relayMarquee = function(id,text){
     let t = document.getElementById(id)
+    let r = document.getElementById('title')
     t.textContent = text;
+    r.style.width = document.body.clientWidth - r.getBoundingClientRect().left
+    /*
     if((t.getBoundingClientRect().width+t.getBoundingClientRect().left)> window.innerWidth && !t.classList.contains("marquee-inner") ){
         
-        let c = 0;
+        
         let d = window.innerWidth - t.getBoundingClientRect().left // free space
 
         /*
@@ -137,12 +140,12 @@ CHANGE TIME REQUEST!
           t.style.width = d+'px'
           //t.style.width = '100%';
         }
-        /**/
+        
         //t.style.width = '100%';
       t.classList.add("marquee-inner")
     }else{
       if(t.classList.contains("marquee-inner"))t.classList.remove("marquee-inner")
-    }
+    }/* */
   }
 
   cosmoPlayer.onPlayerError = function(e){
