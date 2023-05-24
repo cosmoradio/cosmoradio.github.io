@@ -66,7 +66,7 @@ CHANGE TIME REQUEST!
    cosmoPlayer.readTextFile(cosmoPlayer.fileStream, function(text){
      try{
         let t = JSON.parse(text)
-        console.log(t)
+        //console.log(t)
         if(cosmoPlayer.stream?.radio?.lastupdate != t.radio.lastupdate){
           cosmoPlayer.stream = t;
           cosmoPlayer.playlist.list = cosmoPlayer.stream.radio.playlist
