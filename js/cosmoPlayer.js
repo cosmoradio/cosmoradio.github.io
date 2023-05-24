@@ -138,7 +138,8 @@ CHANGE TIME REQUEST!
       if(t.classList.contains("marquee-inner"))t.classList.remove("marquee-inner");
     }
     */
-    if(window.innerWidth < t.style.width){
+   
+    if(window.innerWidth < t.offsetWidth){
       if(r.classList.contains("titlewrap")){
         r.style.width = 'inherit'
         t.style.width = '100%'
