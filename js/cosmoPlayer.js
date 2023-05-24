@@ -126,27 +126,12 @@ CHANGE TIME REQUEST!
     let r = document.getElementById('title')
     t.textContent = text;
     r.style.width =  window.innerWidth - (document.getElementById("buttPlayer").getBoundingClientRect().left+document.getElementById("buttPlayer").offsetWidth)-30+"px"
-    
-    /*
-    if((t.getBoundingClientRect().width+t.getBoundingClientRect().left)> window.innerWidth && !t.classList.contains("marquee-inner") ){
-        
-        
-        let d = window.innerWidth - t.getBoundingClientRect().left // free space
-
-        /*
-        if(t.getBoundingClientRect().width > d){// если ширина больше свободного с лева
-          d = t.getBoundingClientRect().width - d
-          t.style.width = d +'px'
-        }else{
-          t.style.width = d+'px'
-          //t.style.width = '100%';
-        }
-        
-        //t.style.width = '100%';
+    if(!t.classList.contains("marquee-inner")){
       t.classList.add("marquee-inner")
     }else{
-      if(t.classList.contains("marquee-inner"))t.classList.remove("marquee-inner")
-    }/* */
+      t.classList.remove("marquee-inner")
+    }
+
   }
 
   cosmoPlayer.onPlayerError = function(e){
