@@ -74,7 +74,8 @@ CHANGE TIME REQUEST!
 
           if(cosmoPlayer.ytplayer){
             cosmoPlayer.playlist.current = 0
-            cosmoPlayer.ytplayer.loadVideoById(cosmoPlayer.playlist.list[cosmoPlayer.playlist.current])
+            console.log(cosmoPlayer.playlist.list);
+            //cosmoPlayer.ytplayer.loadVideoById(cosmoPlayer.playlist.list[cosmoPlayer.playlist.current])
           }
         }
      }catch(e){ console.log(e,text); }
