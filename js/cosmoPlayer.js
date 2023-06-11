@@ -66,8 +66,9 @@ CHANGE TIME REQUEST!
    cosmoPlayer.readTextFile(cosmoPlayer.fileStream, function(text){
      try{
         let t = JSON.parse(text)
-        //console.log(t)
+        console.log(t)
         if(cosmoPlayer.stream?.radio?.lastupdate != t.radio.lastupdate){
+          console.log("not equal");
           cosmoPlayer.stream = t;
           cosmoPlayer.playlist.list = cosmoPlayer.stream.radio.playlist
 
@@ -224,7 +225,8 @@ CHANGE TIME REQUEST!
       rawFile.open("GET", file, true);
       rawFile.onreadystatechange = function() {
           if (rawFile.readyState === 4 && rawFile.status == "200") {
-              callback(rawFile.responseText);
+            console.log(rawFile.readyState,rawFile.status);
+            callback(rawFile.responseText);
           }
       }
       rawFile.send(null);
