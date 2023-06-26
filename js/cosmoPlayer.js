@@ -66,14 +66,17 @@ CHANGE TIME REQUEST!
    cosmoPlayer.readTextFile(cosmoPlayer.fileStream, function(text){
      try{
         let t = JSON.parse(text)
-        //console.log(t)
         if(cosmoPlayer.stream?.radio?.lastupdate != t.radio.lastupdate){
+          console.log("update ");
           cosmoPlayer.stream = t;
           cosmoPlayer.playlist.list = cosmoPlayer.stream.radio.playlist
-
-          if(cosmoPlayer.ytplayer){
-            cosmoPlayer.playlist.current = 0
-            cosmoPlayer.ytplayer.loadVideoById(cosmoPlayer.playlist.list[cosmoPlayer.playlist.current])
+          cosmoPlayer.playlist.current = 0;
+          if(cosmoPlayer.ytplayer){ // if plaer already exists
+            if(cosmoPlayer.playlist.list[cosmoPlayer.playlist.current] == undefined){
+              cosmoPlayer.Next();
+            }else{
+              cosmoPlayer.ytplayer.loadVideoById(cosmoPlayer.playlist.list[cosmoPlayer.playlist.current]);
+            }
           }
         }
      }catch(e){ console.log(e,text); }
@@ -112,7 +115,6 @@ CHANGE TIME REQUEST!
       MTHFCKER SAYS:
         Тут  релей должен автоматом менять тэг  div на marquee и назад с привязкой по ширене блока.
       */
-
       cosmoPlayer.relayMarquee("artist", cosmoPlayer.ytplayer.getVideoData().title)
       cosmoPlayer.relayMarquee("songname", cosmoPlayer.stream.radio.nowplay.programm)
       document.getElementById('title').onclick = function(){
@@ -125,7 +127,7 @@ CHANGE TIME REQUEST!
     let t = document.getElementById(id)
     let r = document.getElementById('title')
     t.textContent = text;
-   
+
     if(window.innerWidth < t.offsetWidth){
       if(r.classList.contains("titlewrap")){
         r.style.width = 'inherit'
@@ -167,7 +169,7 @@ CHANGE TIME REQUEST!
     //console.log("cosmoPlayer Error",e);
   }
   cosmoPlayer.onPlayerStateChange = function(e){
-    //console.log(e.data)
+    //console.log("init "+e.data)
     switch(e.data) {
       case 0:
         console.log('video ended');
@@ -200,8 +202,14 @@ CHANGE TIME REQUEST!
       case -1:
         // Playing not started
         let q =cosmoPlayer.ytplayer.getVideoData();
-        if(q.errorCode) {  cosmoPlayer.Next()  }
         console.log('Playing not started');
+        if(q.errorCode) {
+          cosmoPlayer.Next()
+        }else{
+          console.log('trying force play');
+          cosmoPlayer.ytplayer.playVideo();
+        }
+
         break;
     }
   }
@@ -209,7 +217,8 @@ CHANGE TIME REQUEST!
   cosmoPlayer.Next = function(){
     //cosmoPlayer.playlist.current+=1;//
     cosmoPlayer.playlist.current++;// ++ making 0,0,1,2,3
-    if( cosmoPlayer.playlist.list === null /*|| cosmoPlayer.playlist.current == (cosmoPlayer.playlist.list.length-1)*/  ){//ok
+    console.log(cosmoPlayer.playlist.current, cosmoPlayer.playlist.list.length);
+    if( (cosmoPlayer.playlist.list).length == 0 || cosmoPlayer.playlist.current == (cosmoPlayer.playlist.list.length-1)  ){// or last empty or curent count equals length
       cosmoPlayer.playlist.list = cosmoPlayer.stream.radio.streams;
       cosmoPlayer.playlist.current = 0;
     }
