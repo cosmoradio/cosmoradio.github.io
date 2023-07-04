@@ -207,7 +207,7 @@ CHANGE TIME REQUEST!
           cosmoPlayer.Next()
         }else{
           console.log('trying force play');
-          cosmoPlayer.ytplayer.playVideo();
+          cosmoPlayer.trigerPlaybutton("play");
         }
 
         break;
