@@ -218,13 +218,14 @@ CHANGE TIME REQUEST!
     //cosmoPlayer.playlist.current+=1;//
     cosmoPlayer.playlist.current++;// ++ making 0,0,1,2,3
     console.log(cosmoPlayer.playlist.current, cosmoPlayer.playlist.list.length);
-    if( (cosmoPlayer.playlist.list).length == 0 || cosmoPlayer.playlist.current == (cosmoPlayer.playlist.list.length-1)  ){// or last empty or curent count equals length
+    //    if( (cosmoPlayer.playlist.list).length == 0 || cosmoPlayer.playlist.current == (cosmoPlayer.playlist.list.length-1)  ){// or last empty or curent count equals length
+ 
+    if( (cosmoPlayer.playlist.list).length == 0 || cosmoPlayer.playlist.current == cosmoPlayer.playlist.list.length  ){// or last empty or curent count equals length
       cosmoPlayer.playlist.list = cosmoPlayer.stream.radio.streams;
       cosmoPlayer.playlist.current = 0;
     }
     cosmoPlayer.ytplayer.loadVideoById(cosmoPlayer.playlist.list[cosmoPlayer.playlist.current]);
-    if(!document.getElementById(cosmoPlayer.idButPlayer).classList.contains("paused")){
-    }
+    if(!document.getElementById(cosmoPlayer.idButPlayer).classList.contains("paused")){    }
   }
 
   cosmoPlayer.readTextFile = function (file, callback) {
