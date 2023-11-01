@@ -1,1 +1,1 @@
-{"radio":{"nowplay":{"description":"deprecated.4bckwrdcmpblty","url":null,"name":{"artist":null,"song":null},"durat":null,"programm":"day_music","locked":false},"playlist":[],"lastupdate":1698844703,"movement":null,"streams":[]},"deamon":{"pid":5919,"current":null,"v":"1.9a->27102023"}}
+{"radio":{"nowplay":{"description":"deprecated.4bckwrdcmpblty","url":null,"name":{"artist":null,"song":null},"durat":null,"programm":"radio","locked":false},"playlist":[],"lastupdate":1698849000,"movement":null,"streams":[]},"deamon":{"pid":5919,"current":null,"v":"1.9a->27102023"}}
